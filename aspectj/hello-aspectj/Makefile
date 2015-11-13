@@ -12,7 +12,7 @@ profile:
 security:
 	ajc -1.5 *.java SecurityAspect.aj
 	
-both:
+aspects:
 	ajc -1.5 *.java *.aj
 
 run:
