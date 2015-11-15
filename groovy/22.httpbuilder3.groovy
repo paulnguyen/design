@@ -256,7 +256,7 @@ def postText(String baseUrl, String path, payload, method = Method.POST) {
     try {
         def ret = null
         def http = new HTTPBuilder(baseUrl)
-		http.auth.basic ('opa', 'hpopenair')
+		http.auth.basic ('userid', 'password')
 		http.parser.'application/xml' = http.parser.'text/plain'
 		//http.ignoreSSLIssues()
 
