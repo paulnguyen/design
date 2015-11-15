@@ -8,7 +8,7 @@
 
 References:
 
-    http://learnrubythehardway.org/book
-    https://github.com/mblair/ruby_the_hard_way
-    https://www.ruby-lang.org/en/documentation
+    http://www.mono-project.com/docs/getting-started/install/linux/
+    http://www.mono-project.com/docs/getting-started/mono-basics/
+    http://stackoverflow.com/questions/25784490/does-cloud-9-support-net-for-build-or-deploy-or-debug
     
