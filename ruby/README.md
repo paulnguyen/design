@@ -8,4 +8,6 @@
 
 References:
 
-    http://eloquentjavascript.net
+    http://learnrubythehardway.org/book/
+    https://github.com/mblair/ruby_the_hard_way
+    
