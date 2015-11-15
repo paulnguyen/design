@@ -3,6 +3,9 @@ all: clean
 clean: 
 	rm *.class
 	
+java:
+	ajc -1.5 *.java
+	
 model1:
 	ajc -1.5 *.java GumballCrankModel.aj GumballCost25.aj GumballOneQuarter.aj
 	

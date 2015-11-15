@@ -6,4 +6,3 @@ def greetings( name ) {
 }
 
 greetings( 'John' )
-

@@ -1,4 +1,20 @@
+def greeting='Hello'
+def clos={ param -> println "${greeting} ${param}" }
+clos.call( 'World' )
 
-[1, 2, 3].each ( { item -> println "${item}" } )
+greeting='Welcome'
+clos.call( 'World' )
 
-[ "k1":"v1", "k2":"v2" ].each ( {key, value -> println key + "=" + value } )
+def demo(c) {
+    def greeting='Bonjour'
+    c.call( 'Ken' )
+}
+demo(clos)
+
+def outer() {
+    def greeting='Goodbye'
+    return { p -> println "${greeting} ${p}" }
+}
+greeting='Welcome'
+clos=outer()
+clos.call( 'Ken' )
