@@ -1,6 +1,3 @@
-# Using the functions from the Ex25 module isn't necessary since they're
-# implemented here, but whatever.
-require '~/ruby_the_hard_way/ex25'
 
 # This function will break up words for us.
 def break_words(sentence)
