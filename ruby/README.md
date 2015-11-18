@@ -9,6 +9,5 @@
 References:
 
     http://learnrubythehardway.org/book
-    https://github.com/mblair/ruby_the_hard_way
     https://www.ruby-lang.org/en/documentation
     
