@@ -1,7 +1,7 @@
 all: clean
 
 clean: 
-	rm abstract_factory/*.class
+	find . -name "*.class" -exec rm -rf {} \;
 
 run_abstract_factory:
 	javac abstract_factory/*.java
