@@ -16,12 +16,12 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
 
 ## Programming on Cloud9
 
-https://docs.c9.io/docs/running-and-debugging-code
-https://docs.c9.io/docs/writing-a-python-app
-https://docs.c9.io/docs/writing-a-ruby-app
-https://docs.c9.io/docs/writing-a-javascript-application
-https://docs.c9.io/docs/writing-a-go-app
-https://docs.c9.io/docs/writing-a-c-app
-https://docs.c9.io/docs/creating-a-scala-app
-https://docs.c9.io/docs/writing-a-simple-html-webpage
-https://docs.c9.io/docs/multiple-ports
+    https://docs.c9.io/docs/running-and-debugging-code
+    https://docs.c9.io/docs/writing-a-python-app
+    https://docs.c9.io/docs/writing-a-ruby-app
+    https://docs.c9.io/docs/writing-a-javascript-application
+    https://docs.c9.io/docs/writing-a-go-app
+    https://docs.c9.io/docs/writing-a-c-app
+    https://docs.c9.io/docs/creating-a-scala-app
+    https://docs.c9.io/docs/writing-a-simple-html-webpage
+    https://docs.c9.io/docs/multiple-ports
