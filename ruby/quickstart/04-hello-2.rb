@@ -2,7 +2,7 @@
 
 # Hello World with Inline String Interpolation
 def h(name = "World")
-puts "Hello #{name.capitalize}!"
+   puts "Hello #{name.capitalize}!"
 end
 
 # Call Function with Param

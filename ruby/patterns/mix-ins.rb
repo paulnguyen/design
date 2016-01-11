@@ -91,9 +91,16 @@ module Notes
   end
 end
 
+module Notes2
+  attr  :concertA
+  def updateConcert
+      @concertA = "Hello"
+  end
+end
 
 class Trumpet
   include Notes
+  include Notes2
   def initialize(tune)
     tuning(tune)
     puts "Instance method returns #{concertA}"
@@ -103,7 +110,8 @@ end
 
 
 # The piano is a little flat, so we'll match it
-Trumpet.new(-5.3)
+a = Trumpet.new(-5.3)
+a.updateConcert
 
 # Not only do we have access to the methods defined in the mixin, but we get access to 
 # the necessary instance variables as well. There's a risk here, of course, that different 

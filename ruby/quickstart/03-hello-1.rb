@@ -3,7 +3,7 @@
 
 # Hello World Function
 def h
-puts "Hello World!"
+    puts "Hello World!"
 end
 
 # Invoke Function

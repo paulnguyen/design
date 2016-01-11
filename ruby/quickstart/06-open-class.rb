@@ -30,6 +30,16 @@ class Greeter
   attr_accessor :name
 end
 
+# Alternative...
+class Greeter
+  def name
+      return @name
+  end
+  def name=(new_name)
+      @name = new_name
+  end
+end
+
 # Now, has new methods
 g = Greeter.new("Andy")
 g.respond_to?("name=")

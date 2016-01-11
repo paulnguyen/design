@@ -1,20 +1,20 @@
+def greeting='Hello'
+def clos={ param -> println "${greeting} ${param}" }
+clos.call( 'World' )
 
-def age=25
+greeting='Welcome'
+clos.call( 'World' )
 
-println 'My age is ${age}'
-println "My age is ${age}"
-println "My age is \${age}"
+def demo(c) {
+    def greeting='Bonjour'
+    c.call( 'Ken' )
+}
+demo(clos)
 
-
-s1="Hello"
-s2="World"
-s3=123
-printf (" %-2s | %-2s| %5d\n", s1, s2, s3) 
-
-
-a='Hello'
-b='World'
-println a.concat(' ').concat(b) 
-println a + ' ' + b
-println "${a} ${b}" 
-printf  "%s %s\n", a , b 
+def outer() {
+    def greeting='Goodbye'
+    return { p -> println "${greeting} ${p}" }
+}
+greeting='Welcome'
+clos=outer()
+clos.call( 'Ken' )
