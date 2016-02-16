@@ -25,3 +25,9 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
     https://docs.c9.io/docs/creating-a-scala-app
     https://docs.c9.io/docs/writing-a-simple-html-webpage
     https://docs.c9.io/docs/multiple-ports
+
+## Supported Languages
+
+    https://docs.c9.io/docs/supported-languages
+    
+    

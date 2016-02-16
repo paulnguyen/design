@@ -27,6 +27,6 @@
     export PATH=$PATH:/home/ubuntu/aspectj1.8/bin:.
     export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
     export ASPECTJ_HOME=/home/ubuntu/aspectj1.8
-    export ASPECTJ_RT=home/ubuntu/aspectj1.8/lib/aspectjrt.jar
+    export ASPECTJ_RT=/home/ubuntu/aspectj1.8/lib/aspectjrt.jar
     
     
