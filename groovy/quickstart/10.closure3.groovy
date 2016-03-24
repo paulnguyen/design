@@ -1,4 +1,11 @@
-def greeting='Hello'
+
+
+/*
+**  http://groovy-lang.org/closures.html
+*/
+
+
+greeting='Hello'
 def clos={ param -> println "${greeting} ${param}" }
 clos.call( 'World' )
 

@@ -1,4 +1,10 @@
 
+
+/*
+**  http://groovy-lang.org/closures.html
+*/
+
+
 def closure = { param -> println( "hello ${param}" ) }
 closure.call( "world!" )
 

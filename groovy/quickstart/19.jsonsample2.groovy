@@ -12,6 +12,6 @@ builder {
   }
 }
 
-//println builder.toPrettyString()
 println builder.toString()
+//println builder.toPrettyString()
 
