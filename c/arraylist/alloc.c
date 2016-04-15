@@ -1,7 +1,6 @@
 /* FILE:  alloc.c 
 ** DESC:  Functions for Memory Manager
 ** BY:    Paul Nguyen
-** Email: phn20@ras.amdahl.com
 */
 
 #include "alloc.h"
@@ -253,7 +252,7 @@ void *memralloc( MEM *pMEM, void *ptr, unsigned int sz )
    int      found=0;
  
   if( !MEM_initialized(pMEM) )
-    return;
+    return NULL;
  
 #ifdef DEBUG
   printf( "Trying to reallocate block at %x of size:%d \n", ptr, sz );

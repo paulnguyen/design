@@ -12,7 +12,7 @@
     /home/ubuntu
     $ ls
     lib/  workspace/
-    $ unzip workspace/aspectj/aspectj1.8.zip 
+    $ unzip workspace/aspectj/zaspectj1.8.zip 
     creating: aspectj1.8/
     creating: aspectj1.8/bin/
     inflating: aspectj1.8/bin/aj 

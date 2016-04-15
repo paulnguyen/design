@@ -25,7 +25,7 @@ import java.nio.file.Paths
 JsonSlurper slurper = new JsonSlurper()
 def studentList
 
-Paths.get('./20.jsonsample3.json').withReader { reader ->
+Paths.get('./EX20_jsonsample3.json').withReader { reader ->
     studentList = slurper.parse(reader)
 }
 

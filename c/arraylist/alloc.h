@@ -1,7 +1,6 @@
 /* FILE:  alloc.h
 ** DESC:  Definition of Memory Manager
 ** BY:    Paul Nguyen
-** Email: phn20@ras.amdahl.com
 */
 
 
