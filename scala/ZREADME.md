@@ -11,4 +11,5 @@ References:
     https://docs.c9.io/docs/creating-a-scala-app
     http://www.scala-lang.org/
     http://www.scala-lang.org/documentation/
+    http://www.atomicscala.com/
     
