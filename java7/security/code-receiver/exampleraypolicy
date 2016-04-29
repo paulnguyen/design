@@ -1,0 +1,9 @@
+/* AUTOMATICALLY GENERATED ON Tue Feb 24 20:00:51 EST 2015*/
+/* DO NOT EDIT */
+
+keystore "file:/home/user/CMPE279/modules/module8/java/code-receiver/exampleraystore", "jks";
+
+grant signedBy "susan" {
+  permission java.io.FilePermission "/home/user/CMPE279/modules/module8/java/code-receiver/testdata.txt", "read";
+};
+

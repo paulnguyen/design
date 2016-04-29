@@ -33,6 +33,17 @@ public class Tester
         T2.start() ;
     }
     
-
+	public static void main( String[] args )
+	{
+    	if ( args[0].equals("test0") )
+        	Tester.runTest0() ;
+    	else if( args[0].equals("test1") )
+        	Tester.runTest1() ;
+    	else if( args[0].equals("test2") )
+        	Tester.runTest2() ;
+    	else {
+        	System.out.println( "methods: test0, test1 or test2)" ) ;
+    	}
+}
     
 }

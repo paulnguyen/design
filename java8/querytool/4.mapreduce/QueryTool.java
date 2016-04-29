@@ -5,11 +5,6 @@ import java.util.UUID;
 
 
 public class QueryTool {
-
- 	interface Filter {
-      boolean operation(String item);
-   	}    
-
     
     public class Query {
         public QueryResults executeQuery(String query) {
@@ -27,14 +22,14 @@ public class QueryTool {
         return resultSet ;
 	}
     
-	public ArrayList<String> map(QueryResults rs, Filter f)
+	public ArrayList<String> map(QueryResults rs)
 	{
 		ArrayList<String> out = new ArrayList<>() ;
         QueryResultsIterator iter =  rs.createIterator() ;
         while ( !iter.isDone()  )
         {
 			String key = UUID.randomUUID().toString();
-			if ( f.operation(iter.currentItem()) ) {
+			if ( Integer.parseInt(iter.currentItem()) % 2 == 0 ) {
         		out.add( key + " => " + iter.currentItem() ) ;			
 			}
             iter.next();
@@ -42,19 +37,28 @@ public class QueryTool {
 		return out ;
 	}    
     
+    public int reduce(ArrayList<String> inputList)
+	{
+		int sum = 0 ;
+		for (String item: inputList) {
+			String[] parts = item.split("=> ");
+			int val = Integer.parseInt(parts[1]);
+    		sum += val ;
+		}
+		return sum ;
+	}        
     
     public static void main(String[] args) {
         QueryTool q = new QueryTool() ;
         QueryResults dataset = q.query( "select * from test" ) ;
-        
-        // filters 
-      	Filter evens = (a) -> ((Integer.parseInt(a)) % 2) == 0;		
-      	Filter odds  = (a) -> ((Integer.parseInt(a)) % 2) != 0;		
-        
-        ArrayList<String> mapset = q.map(dataset, evens) ;
+        ArrayList<String> mapset = q.map(dataset) ;
+        System.out.println( "\nMap..." ) ;
         for (String item : mapset ) {
     		System.out.println( item ) ;
     	}
+        System.out.println( "\nReduce..." ) ;
+        int sum = q.reduce(mapset) ;
+        System.out.println( sum ) ;
     } 
 }
  

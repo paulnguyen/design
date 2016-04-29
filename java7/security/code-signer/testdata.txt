@@ -1,0 +1,17 @@
+This lesson uses a simple application that we provide to you.
+
+Create a file named Count.java on your local computer by either copying or downloading the Count.java source code. The examples in this lesson assume that you place count in the C:\Test directory.
+The count application needs to access a text file containing the data it will process. Download a sample data file, or use any other convenient text file as data.
+
+Important: Put your data file into a directory other than the directory containing your downloaded count class file. We suggest C:\TestData\data.
+
+Later in this lesson you will see how an application running under a security manager cannot read a file unless it has explicit permission to do so. However, an application can always read a file from the same directory (or a subdirectory). It does not need explicit permission.
+Compile and then run the Count application to see what it does.
+
+When you run the count application, you need to specify (as an argument) the path name of a file to be read.
+
+java Count C:\TestData\data
+Here is a sample run:
+
+    C:\Test>java Count C:\TestData\data
+    Counted 65 chars.
