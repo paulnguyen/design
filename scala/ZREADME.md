@@ -12,4 +12,12 @@ References:
     http://www.scala-lang.org/
     http://www.scala-lang.org/documentation/
     http://www.atomicscala.com/
+
+Book:
+
+    http://booksites.artima.com/programming_in_scala
+    http://www.artima.com/pins1ed/
+
+
+
     

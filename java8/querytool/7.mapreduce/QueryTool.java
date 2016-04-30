@@ -77,7 +77,7 @@ public class QueryTool {
 
 		// Reduce		
         System.out.println( "\nReduce..." ) ;
-        int sum = q.reduce(mapset, sumdiv2) ;
+        int sum = q.reduce(mapset, sumdiv2 ) ;
         System.out.println( sum ) ;
 		
 		
