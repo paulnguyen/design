@@ -31,5 +31,10 @@ Groovy Enhancements to Java/JDK 7
 5. Native Support for Regular Expressions
 6. XML/JSON Handling
 
+
+Groovy Style Guide:
+
+http://groovy-lang.org/style-guide.html
+
 **/
 

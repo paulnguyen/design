@@ -5,9 +5,16 @@ Groovy script has two scopes:
 
 binding	— The binding is the global scope for the script.
 local	— variables are scoped locally to the block that they’re declared in.
+def - is used to declare "untyped" variables
+
+REF:
+
+    http://groovy-lang.org/style-guide.HTML
+    http://groovy.jmiguel.eu/groovy.codehaus.org/Scoping+and+the+Semantics+of+%22def%22.html
 
 **/
 
+def msg "Message" ; // declare variable in local scope
 hello = "Hello";  // defined variable of String type (binding scope)
 
 
