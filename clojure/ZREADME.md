@@ -8,7 +8,12 @@
 
 References:
 
-    https://docs.c9.io/docs/creating-a-scala-app
-    http://www.scala-lang.org/
-    http://www.scala-lang.org/documentation/
+    http://www.tryclj.com/
+	https://clojure.org/
+    https://clojure.org/guides/getting_started
+
+    http://leiningen.org/
+    https://github.com/clojure/clojurescript
+    http://himera.herokuapp.com/index.html
+
     
