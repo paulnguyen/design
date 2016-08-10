@@ -8,6 +8,7 @@ compile:
 	
 run-hello:
 	echo Starting Service at:  http://localhost:8080/restlet/hello
+	echo Cloud9 Endpoint: https://design-paulnguyen.c9users.io/restlet/hello
 	java -cp build:lib/org.restlet.jar HelloWorldServer
 
 run-client:

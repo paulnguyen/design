@@ -18,8 +18,9 @@
     
 ## Cloud9 Test End Points
 
-    http://cloud-paulnguyen.c9users.io:8080/restlet/hello
-    
+    http://localhost:8080/restlet/hello
+    https://design-paulnguyen.c9users.io/restlet/hello
+  
     
     
     
