@@ -1,6 +1,7 @@
 package command;
 
 public class Client {
+    
     private String helloMessage = "Hello World!" ;
     private String goodbyeMessage = "Goodbye World!" ;
     private Menu appMenu = new Menu() ;
@@ -33,6 +34,18 @@ public class Client {
         appMenu.addMenuItem(hello, "hello");
         appMenu.addMenuItem(goodbye, "goodbye");
     }
+    
+    
+    public static void main( String [] args )
+    {
+        Client c = new Client() ;
+        c.runSetup() ;
+        Menu m = c.getMenu() ;
+        m.selectMenuItem("hello") ;
+        m.selectMenuItem("goodbye") ;
+        m.selectMenuItem("n/a") ;
+    }
+        
  
 }
  

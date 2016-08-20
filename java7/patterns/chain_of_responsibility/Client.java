@@ -2,7 +2,7 @@ package chain_of_responsibility;
 
 public class Client {
     
-    public static void runTest()
+    public void runTest()
     {
         Handler h1 = new ConcreteHandler1() ;
         Handler h2 = new ConcreteHandler2() ;
@@ -21,5 +21,12 @@ public class Client {
         h1.handleRequest("RX");
 
     }
+    
+    public static void main( String [] args )
+    {
+        Client c = new Client() ;
+        c.runTest() ;
+    }
+    
 
 }

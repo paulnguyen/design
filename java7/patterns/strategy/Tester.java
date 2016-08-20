@@ -2,7 +2,7 @@ package strategy;
 
 public class Tester {
 
-    public static void runTest()
+    public static void main( String[] args)
     {
         DataSet dataset = new DataSet() ; // defaults to BubbleSort
         dataset.display();

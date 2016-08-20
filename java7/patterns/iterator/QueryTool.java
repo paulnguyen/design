@@ -23,5 +23,11 @@ public class QueryTool {
         }
     }
  
+  public static void main( String [] args )
+    {
+        QueryTool t = new QueryTool() ;
+        t.runTest() ;
+    }     
+ 
 }
  

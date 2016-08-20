@@ -8,4 +8,11 @@ public class Tester {
         String result = obj.operation() ;
         System.out.println( result );
     }
+
+  public static void main( String [] args )
+    {
+        Tester t = new Tester() ;
+        t.runTest() ;
+    }    
+    
 }

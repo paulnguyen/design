@@ -11,8 +11,19 @@ public class Client {
 
         // access the singleton instance
         theSingleton = Singleton.getInstance() ;
+        System.out.println( theSingleton ) ;
+
+        // access the singleton instance 2nd time
+        theSingleton = Singleton.getInstance() ;
+        System.out.println( theSingleton ) ;
 
 	}
-	 
+
+   public static void main( String [] args )
+    {
+        Client c = new Client() ;
+        c.runTest() ;
+    }         
+    	 
 }
  

@@ -26,5 +26,12 @@ public class Client {
             System.out.println( e.getMessage() );
         }
     }
+    
+   public static void main( String [] args )
+    {
+        Client c = new Client() ;
+        c.runTest() ;
+    }         
+    
 }
  
