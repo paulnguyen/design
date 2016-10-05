@@ -2,6 +2,8 @@ package gumball ;
 
 public class GumballMachine {
  
+	private static GumballMachine theMachine ;
+
 	State soldOutState;
 	State noQuarterState;
 	State hasQuarterState;
@@ -9,8 +11,21 @@ public class GumballMachine {
  
 	State state = soldOutState;
 	int count = 0;
+
+	private GumballMachine() { }
  
-	public GumballMachine(int numberGumballs) {
+	public static synchronized GumballMachine getInstance() {
+		if (theMachine == null) {
+			theMachine = new GumballMachine() ;
+			theMachine.init( 100 ) ;
+			return theMachine ;
+		}
+		else {
+			return theMachine ;
+		}
+	}
+ 
+	private synchronized void init( int numberGumballs ) {
 		soldOutState = new SoldOutState(this);
 		noQuarterState = new NoQuarterState(this);
 		hasQuarterState = new HasQuarterState(this);
@@ -21,36 +36,40 @@ public class GumballMachine {
 			state = noQuarterState;
 		} 
 	}
- 
-	public void insertQuarter() {
+
+	public synchronized void insertQuarter() {
 		state.insertQuarter();
 	}
  
-	public void ejectQuarter() {
+	public synchronized void ejectQuarter() {
 		state.ejectQuarter();
 	}
  
-	public void turnCrank() {
+	public synchronized void turnCrank() {
 		state.turnCrank();
 		state.dispense();
 	}
 
-	void setState(State state) {
+	public synchronized int getCount() {
+		return count;
+	}
+
+	public synchronized String getStateString() {
+		return this.state.toString() ;
+	}	
+
+	synchronized void setState(State state) {
 		this.state = state;
 	}
  
-	void releaseBall() {
+	synchronized void releaseBall() {
 		System.out.println("A gumball comes rolling out the slot...");
 		if (count != 0) {
 			count = count - 1;
 		}
 	}
- 
-	int getCount() {
-		return count;
-	}
- 
-	void refill(int count) {
+  
+	synchronized void refill(int count) {
 		this.count = count;
 		state = noQuarterState;
 	}
@@ -75,7 +94,7 @@ public class GumballMachine {
         return soldState;
     }
  
-	public String toString() {
+	public synchronized String toString() {
 		StringBuffer result = new StringBuffer();
 		result.append("\nMighty Gumball, Inc.");
 		result.append("\nJava-enabled Standing Gumball Model #2004");

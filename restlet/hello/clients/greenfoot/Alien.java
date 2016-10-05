@@ -11,11 +11,11 @@ import org.restlet.representation.Representation ;
 public class Alien extends Actor
 {
     Message m = new Message() ;
-    private final String service_url = "http://restapi-1.df4aed9e.cont.dockerapp.io/restlet/hello" ;
+    private final String service_url = "http://aws.nguyenresearch.com/restlet/hello" ;
 
     // Cloud 9 - REST Service: http://cloud-paulnguyen.c9users.io:8080/restlet/hello
     // Local   - REST Service: http://localhost:8080/restlet/hello
-    // Docker  - REST Service: http://restapi-1.df4aed9e.cont.dockerapp.io/restlet/hello
+    // Docker  - REST Service: http://aws.nguyenresearch.com/restlet/hello
 
 
     public Alien()

@@ -3,7 +3,7 @@ package gumball ;
 public class GumballMachineTestDrive {
 
 	public static void main(String[] args) {
-		GumballMachine gumballMachine = new GumballMachine(5);
+		GumballMachine gumballMachine = GumballMachine.getInstance() ;
 
 		System.out.println(gumballMachine);
 

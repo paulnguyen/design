@@ -8,6 +8,66 @@
 	},
 	"item": [
 		{
+			"name": "Gumball Test",
+			"description": "",
+			"item": [
+				{
+					"name": "Restlet Gumball Machine | Get Banner",
+					"request": {
+						"url": "http://{{url}}:{{port}}/gumball",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Restlet Gumball Machine | Insert Quarter",
+					"request": {
+						"url": "http://{{url}}:{{port}}/gumball",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"insert-quarter\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Restlet Gumball Machine | Turn Crank",
+					"request": {
+						"url": "http://{{url}}:{{port}}/gumball",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"turn-crank\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Hello Restlet",
 			"description": "",
 			"item": [

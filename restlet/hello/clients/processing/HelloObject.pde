@@ -4,7 +4,7 @@ import org.restlet.representation.Representation ;
 
 class HelloObject
 {
-  private final String service_url = "http://restapi-1.df4aed9e.cont.dockerapp.io/restlet/hello" ;
+  private final String service_url = "http://aws.nguyenresearch.com/restlet/hello" ;
   String getMessage() { 
     try {
       ClientResource helloClientresource = new ClientResource( service_url ); 
