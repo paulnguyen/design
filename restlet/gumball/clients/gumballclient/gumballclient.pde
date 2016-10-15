@@ -25,7 +25,7 @@ void setup()
   font = loadFont("BookAntiqua-48.vlw");
   
   // Set Up Gumball Machine
-  gumballMachine = new GumballMachine(2);
+  gumballMachine = new GumballMachine();
   System.out.println(gumballMachine);
   
 
@@ -103,17 +103,4 @@ void mouseClicked() {
       System.out.println(gumballMachine);
       gumballMachine.turnCrank();
    }
-}
-
-public void runTest() {
-  GumballMachine gumballMachine = new GumballMachine(5);
-  System.out.println(gumballMachine);
-  gumballMachine.insertQuarter();
-  gumballMachine.turnCrank();
-  System.out.println(gumballMachine);
-  gumballMachine.insertQuarter();
-  gumballMachine.turnCrank();
-  gumballMachine.insertQuarter();
-  gumballMachine.turnCrank();
-  System.out.println(gumballMachine);
 }

@@ -3,13 +3,17 @@
 import java.net.* ;
 import java.util.* ;
 import java.io.* ;
+import org.json.* ;
+import org.restlet.resource.*;
+import org.restlet.representation.* ;
+import org.restlet.ext.json.* ;
+import org.restlet.data.* ;
 
 /**
    Defines a single test case running in its own thread.
    Each test case connects to a URL (via HTTP GET) and
    grabs the number of bytes or error condition.
-   @version $Revision: 1.4 $ $Date: 2001/09/16 05:51:37 $
-*/
+**/
 public class RunLoadTest {
 
    /** URL to run the test */
@@ -62,12 +66,15 @@ public class RunLoadTest {
                {
                     public void run() 
                     {
-                           while( !LoadTest.isOutOfTime() ) 
+                           while( !RunLoadTest.isOutOfTime() ) 
                            {
                                  doTest() ;
                                  try { Thread.sleep( 500 ) ; }
-                                 catch ( InterruptedException e ) {}
+                                 catch ( InterruptedException e ) {
+                                    System.out.println( e.getMessage() ) ;
+                                 }
                             }
+                            System.out.println( "Test " + myGroup + " Stopped! ==> " + reqCount + " Runs.") ;
                     }
                }
          ) ;
@@ -80,45 +87,40 @@ public class RunLoadTest {
    and records the number of bytes returned.  Each
    test results are documented and displayed in
    standard out with the following information:
-   <br/>
-   <ul>
-   <li> URL - The source URL of the test </li>
-   <li> REQ CNT - How many times this test has run </li>
-   <li> START - The start time of the last test run </li>
-   <li> STOP - The stop time of the last test run </li>
-   <li> THREAD - The thread id handling this test case </li>
-   <li> RESULT - The result of the test.  Either the number of bytes returned or an error message. </li>
-   </ul>
+
+   URL - The source URL of the test
+   REQ CNT - How many times this test has run 
+   START - The start time of the last test run 
+   STOP - The stop time of the last test run 
+   THREAD - The thread id handling this test case 
+   RESULT - The result of the test.  Either the number of bytes returned or an error message.
    */
    private void doTest() 
    {
       String result = "" ;
       this.reqCount++ ;
 
-       // Connect and get number of bytes...
+       // Connect and run test steps
       Date startTime = new Date() ;
       try {
-            URL urlSpec = new URL( this.myURL ) ;
-            URLConnection urlCon = urlSpec.openConnection() ;
-            InputStream is = urlCon.getInputStream() ;
-            DataInputStream dis ;
-            int cntBytes = 0 ;
-            dis = new DataInputStream(new BufferedInputStream(is));
-            try {
-                  while ( true ) 
-                  {
-                     byte aByte = dis.readByte() ;
-                     cntBytes++ ;
-                  }
-            } catch ( EOFException e ) { /* End-of-file expected */ }
-            is.close() ;
-            int len = urlCon.getContentLength() ;
-            result = "Bytes Read = " + cntBytes ;
+         ClientResource client = new ClientResource( this.myURL ); 
+
+         // Insert Quarter
+         JSONObject json_insert_quarter = new JSONObject();
+         json_insert_quarter.put("action", "insert-quarter");
+         client.post(new JsonRepresentation(json_insert_quarter), MediaType.APPLICATION_JSON);
+
+         // Turn Crank
+         JSONObject json_turn_crank = new JSONObject();
+         json_turn_crank.put("action", "turn-crank");
+         client.post(new JsonRepresentation(json_turn_crank), MediaType.APPLICATION_JSON);
+
+         // Get Gumball Count
+         Representation result_string = client.get() ; 
+         JSONObject json_count = new JSONObject( result_string.getText() ) ;
+         result = Integer.toString( (int)json_count.get("count") ) ;   
       }
-      catch ( java.net.MalformedURLException e ) {
-            result = e.toString() ;
-      }
-      catch ( java.io.IOException e ) {
+      catch ( Exception e ) {
             result = e.toString() ;
       }
       finally {
@@ -138,154 +140,24 @@ public class RunLoadTest {
    /**
    Main Class Routine that reads in URL specs from a file and a duration (in miliseconds)
    of how long to run the test.
-   <br/>
-   <b>USAGE: java LoadTest [Test File] [Duration in seconds]</b>
-   <br/><br/>
-   <em>EXAMPLE:</em>
-   <pre>
-
-		  java LoadTest urls.txt 5
-		  
-		  Start Test Run: Fri Aug 31 14:51:41 PDT 2001
-		  java.lang.ThreadGroup[name=Test Suite,maxpri=10]
-				Thread[Thread-0,5,Test Suite]
-				Thread[Thread-1,5,Test Suite]
-				Thread[Thread-2,5,Test Suite]
-				Thread[Thread-3,5,Test Suite]
-				Thread[Thread-4,5,Test Suite]
-		  ======================================
-		  URL     => http://www.yahoo.com
-		  REQ CNT => 1
-		  START   => Fri Aug 31 14:51:41 PDT 2001
-		  STOP    => Fri Aug 31 14:51:42 PDT 2001
-		  THREAD  => Thread-1
-		  RESULT  => Bytes Read = 14427
-		  
-		  ======================================
-		  URL     => http://www.sun.com
-		  REQ CNT => 1
-		  START   => Fri Aug 31 14:51:41 PDT 2001
-		  STOP    => Fri Aug 31 14:51:43 PDT 2001
-		  THREAD  => Thread-3
-		  RESULT  => Bytes Read = 13995
-		  
-		  ======================================
-		  URL     => http://www.oracle.com
-		  REQ CNT => 1
-		  START   => Fri Aug 31 14:51:41 PDT 2001
-		  STOP    => Fri Aug 31 14:51:43 PDT 2001
-		  THREAD  => Thread-2
-		  RESULT  => Bytes Read = 24745
-		  
-		  ======================================
-		  URL     => http://www.yahoo.com
-		  REQ CNT => 2
-		  START   => Fri Aug 31 14:51:43 PDT 2001
-		  STOP    => Fri Aug 31 14:51:43 PDT 2001
-		  THREAD  => Thread-1
-		  RESULT  => Bytes Read = 14427
-		  
-		  ======================================
-		  URL     => http://java.sun.com
-		  REQ CNT => 1
-		  START   => Fri Aug 31 14:51:41 PDT 2001
-		  STOP    => Fri Aug 31 14:51:44 PDT 2001
-		  THREAD  => Thread-4
-		  RESULT  => Bytes Read = 44094
-		  
-		  ======================================
-		  URL     => http://www.sun.com
-		  REQ CNT => 2
-		  START   => Fri Aug 31 14:51:43 PDT 2001
-		  STOP    => Fri Aug 31 14:51:44 PDT 2001
-		  THREAD  => Thread-3
-		  RESULT  => Bytes Read = 13995
-		  
-		  ======================================
-		  URL     => http://www.yahoo.com
-		  REQ CNT => 3
-		  START   => Fri Aug 31 14:51:44 PDT 2001
-		  STOP    => Fri Aug 31 14:51:44 PDT 2001
-		  THREAD  => Thread-1
-		  RESULT  => Bytes Read = 14427
-		  
-		  ======================================
-		  URL     => http://www.oracle.com
-		  REQ CNT => 2
-		  START   => Fri Aug 31 14:51:44 PDT 2001
-		  STOP    => Fri Aug 31 14:51:45 PDT 2001
-		  THREAD  => Thread-2
-		  RESULT  => Bytes Read = 24745
-		  
-		  ======================================
-		  URL     => http://www.sun.com
-		  REQ CNT => 3
-		  START   => Fri Aug 31 14:51:44 PDT 2001
-		  STOP    => Fri Aug 31 14:51:45 PDT 2001
-		  THREAD  => Thread-3
-		  RESULT  => Bytes Read = 13995
-		  
-		  ======================================
-		  URL     => http://www.yahoo.com
-		  REQ CNT => 4
-		  START   => Fri Aug 31 14:51:45 PDT 2001
-		  STOP    => Fri Aug 31 14:51:46 PDT 2001
-		  THREAD  => Thread-1
-		  RESULT  => Bytes Read = 14427
-		  
-		  ======================================
-		  URL     => http://java.sun.com
-		  REQ CNT => 2
-		  START   => Fri Aug 31 14:51:44 PDT 2001
-		  STOP    => Fri Aug 31 14:51:46 PDT 2001
-		  THREAD  => Thread-4
-		  RESULT  => Bytes Read = 44099
-		  
-		  ======================================
-		  URL     => http://www.yahoo.com
-		  REQ CNT => 5
-		  START   => Fri Aug 31 14:51:46 PDT 2001
-		  STOP    => Fri Aug 31 14:51:47 PDT 2001
-		  THREAD  => Thread-1
-		  RESULT  => Bytes Read = 14427
-		  
-		  ======================================
-		  URL     => http://www.sun.com
-		  REQ CNT => 4
-		  START   => Fri Aug 31 14:51:46 PDT 2001
-		  STOP    => Fri Aug 31 14:51:47 PDT 2001
-		  THREAD  => Thread-3
-		  RESULT  => Bytes Read = 13995
-		  
-		  ======================================
-		  URL     => http://www.oracle.com
-		  REQ CNT => 3
-		  START   => Fri Aug 31 14:51:46 PDT 2001
-		  STOP    => Fri Aug 31 14:51:47 PDT 2001
-		  THREAD  => Thread-2
-		  RESULT  => Bytes Read = 24745
-		  
-		  ======================================
-		  URL     => http://slashdot.org/article.pl?sid=01/06/14/1332242
-		  REQ CNT => 1
-		  START   => Fri Aug 31 14:51:41 PDT 2001
-		  STOP    => Fri Aug 31 14:51:49 PDT 2001
-		  THREAD  => Thread-0
-		  RESULT  => Bytes Read = 67176
-		  
-		  Stop Test Run: Fri Aug 31 14:51:47 PDT 2001
-   </pre>
+   
+   USAGE: java RunLoadTest [Duration in seconds]</b>
+  
    */
    public static void main( String[] args ) 
    {
-      if ( args.length == 2 ) 
+      if ( args.length == 1 ) 
       {
          // Record Start of Test Run
          Date testStart = new Date() ; 
          System.out.println( "Start Test Run: " + testStart.toString() ) ;       
 
-         // Load URLs from test file and run tests
-         loadThreads( args[0] ) ;
+         // Load and run tests
+         loadThread( "Test Group #1") ;
+         loadThread( "Test Group #2") ;
+         loadThread( "Test Group #3") ;
+         loadThread( "Test Group #4") ;
+         loadThread( "Test Group #5") ;
 
          // Set Timer to stop testing
          Timer timer = new Timer() ;
@@ -294,51 +166,36 @@ public class RunLoadTest {
             public void run() 
             {
                Date testStop = new Date() ;
-               LoadTest.setOutOfTime() ;
-               try { Thread.sleep(3000); } catch ( Exception e ) {}  // Pause to allow all threads to stop.
+               RunLoadTest.setOutOfTime() ;
+               try { Thread.sleep(3000); } catch ( Exception e ) {}  
+               // Pause to allow all threads to stop.
                System.out.println( "Stop Test Run: " + testStop.toString() ) ;   
             }
          } ;
 
          // Schedule Test Run according to the duration given
          long curDate = new Date().getTime() ;
-         long milis = Long.parseLong( args[1] ) * 1000 ;
+         long milis = Long.parseLong( args[0] ) * 1000 ;
          timer.schedule( task, new Date( curDate + milis) );
       }
       else {
-         System.out.println( "USAGE: java LoadTest [Test File[ [Duration in seconds]" ) ;
+         System.out.println( "USAGE: java RunLoadTest [Duration in seconds]" ) ;
       }
    }
 
    /**
-   Helper method for main to load list of URLs from a file into a thread group,
-   and start each test case.
-   @param fileSpec location of file
+   Helper method for main to load tests into a thread group and start each test case.
    */
-   private static void loadThreads( String fileSpec ) {              
-         // Check if file is valid
-         File testFile = new File ( fileSpec ) ;
-         if ( !testFile.exists() || !testFile.canRead() ) 
-         {
-            System.out.println( "ERROR: Can't read test file for list of URLs." ) ;
-         }
-         else 
-         {
-            // Open File and read in list of URLs.  Each URL gets a LoadTest object.
-            try {
-               FileReader fr = new FileReader( testFile ) ;
-               BufferedReader in = new BufferedReader( fr ) ;
-               ThreadGroup myThreadGroup = new ThreadGroup( "Test Suite" ) ;     
-               String urlSpec = null ;  
-               while( (urlSpec = in.readLine()) != null ) {
-                    LoadTest test = new LoadTest( myThreadGroup, urlSpec ) ;
-                    test.runTest() ;  // Run The Test in its own thread
-               }
-               myThreadGroup.list() ; 
-            } catch ( Exception e ) {
-               System.out.println( "ERROR: " + e.getMessage() );
-            }
-         }
+   private static void loadThread( String name ) {              
+      try {
+         ThreadGroup myThreadGroup = new ThreadGroup( name ) ;     
+         String urlSpec = "http://localhost:8080/gumball" ;  
+         RunLoadTest test = new RunLoadTest( myThreadGroup, urlSpec ) ;
+         test.runTest() ;  // Run The Test in its own thread
+         myThreadGroup.list() ; 
+      } catch ( Exception e ) {
+         System.out.println( "ERROR: " + e.getMessage() );
+      }
    }
 
 

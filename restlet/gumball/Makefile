@@ -9,6 +9,9 @@ clean:
 jar: compile
 	cd build ; jar -cvfe ../dist/app.jar GumballServer .
 
+json-jar: compile
+	cd build ; jar -cvfe ../dist/json.jar JSON org
+
 test: compile
 	java -cp dist/restlet.jar:dist/restlet-json.jar:dist/app.jar GumballServer
 
@@ -16,11 +19,16 @@ compile:
 	javac -cp lib/org.restlet.jar:lib/org.restlet.ext.json.jar -d build \
 	src/gumball/*.java \
 	src/org/json/*.java \
+	clients/loadtestclient/*.java \
 	src/api/*.java
 
 run:
 	echo Starting Service at:  http://localhost:8080
 	java -cp build:lib/org.restlet.jar:lib/org.restlet.ext.json.jar api.GumballServer
+
+loadtest:
+	echo Starting Load Test on localhost
+	java -cp build:lib/org.restlet.jar:lib/org.restlet.ext.json.jar RunLoadTest 5
 
 docker-build: jar
 	docker build -t gumball .
