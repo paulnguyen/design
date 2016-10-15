@@ -6,31 +6,27 @@ clean:
 	rm -f dist/app.jar
 	find . -name "*.class" -exec rm -rf {} \;
 
-jar: compile
+app: compile
 	cd build ; jar -cvfe ../dist/app.jar GumballServer .
 
-json-jar: compile
-	cd build ; jar -cvfe ../dist/json.jar JSON org
-
-test: compile
-	java -cp dist/restlet.jar:dist/restlet-json.jar:dist/app.jar GumballServer
+test: compile app
+	java -cp dist/restlet.jar:dist/restlet-json.jar:dist/json.jar:dist/app.jar api.GumballServer
 
 compile: 
-	javac -cp lib/org.restlet.jar:lib/org.restlet.ext.json.jar -d build \
+	javac -cp dist/restlet.jar:dist/restlet-json.jar:dist/json.jar -d build \
 	src/gumball/*.java \
-	src/org/json/*.java \
 	clients/loadtestclient/*.java \
 	src/api/*.java
 
 run:
 	echo Starting Service at:  http://localhost:8080
-	java -cp build:lib/org.restlet.jar:lib/org.restlet.ext.json.jar api.GumballServer
+	java -cp build:dist/restlet.jar:dist/restlet-json.jar:dist/json.jar api.GumballServer
 
 loadtest:
 	echo Starting Load Test on localhost
-	java -cp build:lib/org.restlet.jar:lib/org.restlet.ext.json.jar RunLoadTest 5
+	java -cp build:dist/restlet.jar:dist/restlet-json.jar:dist/json.jar RunLoadTest 5
 
-docker-build: jar
+docker-build: app
 	docker build -t gumball .
 	docker images
 

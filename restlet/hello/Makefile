@@ -5,19 +5,25 @@ clean:
 	rm -f dist/app.jar
 	find . -name "*.class" -exec rm -rf {} \;
 
-jar: compile
+app: compile
 	cd build ; jar -cvfe ../dist/app.jar HelloWorldServer .
 
-test: compile
-	java -cp dist/restlet.jar:dist/restlet-json.jar:dist/app.jar HelloWorldServer
+test: compile app
+	java -cp dist/restlet.jar:dist/restlet-json.jar:dist/app.jar helloworld.HelloWorldServer
 
 compile: 
-	javac -cp lib/org.restlet.jar:lib/org.restlet.ext.json.jar -d build \
+	javac -cp \
+	dist/json.jar:\
+	dist/restlet.jar:\
+	dist/restlet-json.jar:\
+	dist/restlet-jackson.jar:\
+	dist/jackson-core-2.8.3.jar:\
+	dist/jackson-annotations-2.8.3.jar \
+	-d build \
 	src/mailserver/*.java \
-	src/org/json/*.java \
 	src/helloworld/*.java
 
-docker-build: jar
+docker-build: app
 	docker build -t restapi .
 	docker images
 
@@ -52,26 +58,27 @@ docker-shell:
 run-hello:
 	echo Starting Service at:  http://localhost:8080/restlet/hello
 	echo Cloud9 Endpoint: https://design-paulnguyen.c9users.io/restlet/hello
-	java -cp build:lib/org.restlet.jar helloworld.HelloWorldServer
+	java -cp build:dist/restlet.jar helloworld.HelloWorldServer
 
 run-client:
-	java -cp build:lib/org.restlet.jar helloworld.HelloWorldClient
+	java -cp build:dist/restlet.jar helloworld.HelloWorldClient
 
 run-echo:
 	echo Starting Service at:  http://localhost:8111
-	java -cp build:lib/org.restlet.jar helloworld.EchoServer
+	java -cp build:dist/restlet.jar helloworld.EchoServer
 
 run-mail-server-filter:
 	echo Starting Service at:  http://localhost:8111
-	java -cp build:lib/org.restlet.jar mailserver.MailServerApplication
+	java -cp build:dist/restlet.jar mailserver.MailServerApplication
 
 run-mail-server-resources:
 	echo Starting Service at:  http://localhost:8111
-	java -cp build:lib/org.restlet.jar mailserver.MailServerApplication2
+	java -cp build:dist/restlet.jar mailserver.MailServerApplication2
 
 run-mail-client:
-	java -cp build:lib/org.restlet.jar mailserver.MailClient
+	echo Running Mail Client
+	java -cp build:dist/restlet.jar mailserver.MailClient
 
 run-mail-server-json:
 	echo Starting Service at:  http://localhost:8080
-	java -cp build:lib/org.restlet.jar:lib/org.restlet.ext.json.jar mailserver.MailServerApplication3
+	java -cp build:dist/restlet.jar:dist/restlet-json.jar:dist/json.jar mailserver.MailServerApplication3
