@@ -14,7 +14,7 @@
 				{
 					"name": "Restlet Gumball Machine | Get Banner",
 					"request": {
-						"url": "http://{{url}}:{{port}}/gumball",
+						"url": "http://{{host}}:{{port}}/gumball",
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -28,7 +28,7 @@
 				{
 					"name": "Restlet Gumball Machine | Insert Quarter",
 					"request": {
-						"url": "http://{{url}}:{{port}}/gumball",
+						"url": "http://{{host}}:{{port}}/gumball",
 						"method": "POST",
 						"header": [
 							{
@@ -48,7 +48,7 @@
 				{
 					"name": "Restlet Gumball Machine | Turn Crank",
 					"request": {
-						"url": "http://{{url}}:{{port}}/gumball",
+						"url": "http://{{host}}:{{port}}/gumball",
 						"method": "POST",
 						"header": [
 							{
@@ -198,20 +198,6 @@
 					"response": []
 				},
 				{
-					"name": "Restlet | Mail Server Resource (Accounts | Get)",
-					"request": {
-						"url": "http://localhost:8111/accounts/",
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
 					"name": "Restlet | Mail Server Resource (Accounts | Post)",
 					"request": {
 						"url": "http://localhost:8111/accounts/",
@@ -220,6 +206,20 @@
 						"body": {
 							"mode": "raw",
 							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Restlet | Mail Server Resource (Accounts | Get)",
+					"request": {
+						"url": "http://localhost:8111/accounts/",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
 						},
 						"description": ""
 					},
@@ -350,7 +350,7 @@
 				{
 					"name": "Restlet | Hello World (Docker Cloud)",
 					"request": {
-						"url": "http://restapi.3ddd5e20.svc.dockerapp.io/restlet/hello",
+						"url": "http://restapi-hello-1.c2247b6d.cont.dockerapp.io/restlet/hello",
 						"method": "GET",
 						"header": [
 							{
