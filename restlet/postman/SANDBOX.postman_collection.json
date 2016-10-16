@@ -300,6 +300,74 @@
 						"description": ""
 					},
 					"response": []
+				},
+				{
+					"name": "Restlet | Mail Server JACKSON | Get (Localhost)",
+					"request": {
+						"url": "http://localhost:9000/mail",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Restlet | Mail Server JACKSON | Put (Localhost)",
+					"request": {
+						"url": "http://localhost:9000/mail",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"subject\": \"RE: Message to Self\",\n  \"content\": \"Hello There!\",\n  \"status\": \"Received\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Restlet | Mail Server JACKSON | Get (Docker Local)",
+					"request": {
+						"url": "http://192.168.99.100:9000/mail",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Restlet | Mail Server JACKSON | Put (Docker Local)",
+					"request": {
+						"url": "http://192.168.99.100:9000/mail",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"subject\": \"RE: Message to Self\",\n  \"content\": \"Hello There!\",\n  \"status\": \"Received\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
 				}
 			]
 		},
@@ -567,6 +635,40 @@
 					"name": "Restlet | Mail Server JSON | Put (AWS DNS)",
 					"request": {
 						"url": "http://aws.nguyenresearch.com:8080/mail",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"subject\": \"RE: Message to Self\",\n  \"content\": \"Hello There Again!\",\n  \"status\": \"Received\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Restlet | Mail Server JACKSON | Get (AWS DNS)",
+					"request": {
+						"url": "http://aws.nguyenresearch.com:81/mail",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Account #1"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Restlet | Mail Server JACKSON | Put (AWS DNS)",
+					"request": {
+						"url": "http://aws.nguyenresearch.com:81/mail",
 						"method": "PUT",
 						"header": [
 							{
