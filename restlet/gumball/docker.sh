@@ -215,8 +215,8 @@ do
 		echo "[+] More Options                        " ;
 	else
 		echo " "
-		echo "[i] install    - Install Container Image   " ;
-		echo "[u] uninstall  - Remove Container Image    " ;
+		echo "[i] install    - Install Container         " ;
+		echo "[u] uninstall  - Uninstall Container       " ;
 		echo "[r] restart    - Restart Container         " ;
 		echo "[s] stop       - Stop Running Container    " ;
 		echo "[b] bash       - Enter Container Shell     " ;
