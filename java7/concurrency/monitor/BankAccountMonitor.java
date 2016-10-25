@@ -1,11 +1,11 @@
 
-public class BankAccount
+public class BankAccountMonitor
 {
     private double balance ;
     private Lock theLock ;
     private Condition sufficientFunds ;
 
-    public BankAccount()
+    public BankAccountMonitor()
     {
         balance = 0.0 ;
         theLock = new Lock() ;

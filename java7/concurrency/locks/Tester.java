@@ -4,7 +4,7 @@ import java.util.concurrent.locks.ReentrantLock ;
 public class Tester
 { 
 
-   public static void runTest0()
+   public static void badLockTest()
     {
         BadLock theLock = new BadLock() ;
         BadLockTestThread T1 = new BadLockTestThread(theLock) ;
@@ -13,7 +13,7 @@ public class Tester
         T2.start() ;
     }
 
-   public static void runTest1()
+   public static void goodLockTest()
     {
         Lock theLock = new Lock() ;
         LockTestThread T1 = new LockTestThread(theLock) ;
@@ -24,7 +24,7 @@ public class Tester
         T3.start() ;
     }
 
-    public static void runTest2()
+    public static void reentrantLockTest()
     {
         ReentrantLock theLock = new ReentrantLock() ;
         JavaLockTestThread T1 = new JavaLockTestThread(theLock) ;
@@ -35,15 +35,18 @@ public class Tester
     
 	public static void main( String[] args )
 	{
-    	if ( args[0].equals("test0") )
-        	Tester.runTest0() ;
-    	else if( args[0].equals("test1") )
-        	Tester.runTest1() ;
-    	else if( args[0].equals("test2") )
-        	Tester.runTest2() ;
-    	else {
-        	System.out.println( "methods: test0, test1 or test2)" ) ;
-    	}
-}
+        if ( args.length < 1 ) {
+            System.out.println( "java Tester <test> " ) ;
+            System.out.println( "<test> = bad-lock | good-lock | reentrant-lock" ) ;
+        }
+        else {
+        	if ( args[0].equals("bad-lock") )
+            	Tester.badLockTest() ;
+        	else if( args[0].equals("good-lock") )
+            	Tester.goodLockTest() ;
+        	else if( args[0].equals("reentrant-lock") )
+            	Tester.reentrantLockTest() ;
+        }
+    }
     
 }

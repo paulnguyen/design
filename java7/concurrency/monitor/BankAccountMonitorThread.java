@@ -1,9 +1,9 @@
-public class BankAccountThread extends Thread
+public class BankAccountMonitorThread extends Thread
 {
-    private BankAccount theAcct ;
+    private BankAccountMonitor theAcct ;
     private double transactionAmount ;
     
-    public BankAccountThread(BankAccount acct, double transAmt)
+    public BankAccountMonitorThread(BankAccountMonitor acct, double transAmt)
     {
         this.theAcct = acct ;
         this.transactionAmount = transAmt ;

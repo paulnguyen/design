@@ -31,6 +31,19 @@ public class Tester
         savehuman.start();        
     }
 
- 
+    public static void main( String[] args )
+    {
+        if ( args.length < 1 ) {
+            System.out.println( "java Tester <test> " ) ;
+            System.out.println( "<test> = robot-test-1 | robot-test-2 " ) ;
+        }
+        else {
+            if ( args[0].equals("robot-test-1") )
+                try { Tester.runRobotTest1() ; } catch (Exception e) {} ;
+            if ( args[0].equals("robot-test-2") )
+                try { Tester.runRobotTest2() ; } catch (Exception e) {} ;
+        }
+    }
+    
     
 }

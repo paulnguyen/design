@@ -1,9 +1,9 @@
 
-public class BankAccountJavaSync
+public class BankAccountJavaMonitor
 {
     private double balance ;
 
-    public BankAccountJavaSync()
+    public BankAccountJavaMonitor()
     {
         balance = 0.0 ;
     }

@@ -3,7 +3,7 @@ all: clean
 clean: 
 	find . -name "*.class" -exec rm -rf {} \;
 
-run:
+run: compile
 	java LoadTest urls.txt 5
 	
 compile:

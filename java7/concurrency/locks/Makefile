@@ -6,12 +6,12 @@ clean:
 compile:
 	javac *.java
 	
-run0:
-	java Tester test0
+run-bad-lock: compile
+	java Tester bad-lock
 
-run1:
-	java Tester test1
+run-good-lock: compile
+	java Tester good-lock
 
-run2:
-	java Tester test2
+run-reentrant-lock: compile
+	java Tester reentrant-lock
 	

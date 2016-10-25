@@ -1,9 +1,9 @@
-public class BankAccountJavaSyncThread extends Thread
+public class BankAccountJavaMonitorThread extends Thread
 {
-    private BankAccountJavaSync theAcct ;
+    private BankAccountJavaMonitor theAcct ;
     private double transactionAmount ;
     
-    public BankAccountJavaSyncThread(BankAccountJavaSync acct, double transAmt)
+    public BankAccountJavaMonitorThread(BankAccountJavaMonitor acct, double transAmt)
     {
         this.theAcct = acct ;
         this.transactionAmount = transAmt ;
