@@ -26,6 +26,13 @@ Downloads:
     https://golang.org/doc/install?download=go1.7.3.linux-amd64.tar.gz
     https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
 
+Updating Go (on Cloud9)
+
+    sudo rm -rf /opt/go
+    wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz
+    sudo tar -C /opt -xzf go1.7.3.linux-amd64.tar.gz
+    go version
+    rm go1.7.3.linux-amd64.tar.gz 
 
 
 
