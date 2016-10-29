@@ -6,8 +6,9 @@ clean:
 compile: 
 	javac *.java
 
-run: compile
+run-concurrent-linked-queue: compile
 	java ConcurrentLinkedQueueExample
 
-
+run-linked-blocking-queue: compile
+	java LinkedBlockingQueueExample
 	
