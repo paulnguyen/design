@@ -7,7 +7,8 @@ import org.restlet.data.* ;
 
 public class GumballMachine {
   
-  private String URL = "http://aws.nguyenresearch.com:8181/gumball" ;
+  private String URL = "http://localhost:8080/gumball" ;
+  //private String URL = "http://aws.nguyenresearch.com:8181/gumball" ;
   ClientResource client ; 
 
   public GumballMachine() {

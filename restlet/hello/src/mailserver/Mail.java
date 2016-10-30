@@ -41,9 +41,7 @@ package mailserver ;
 public class Mail {
 
     private String status;
-
     private String subject;
-
     private String content;
 
     public String getContent() {
@@ -68,6 +66,14 @@ public class Mail {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public String getMessage() {
+        return "Hello There from Jackson Resource!" ;
+    }
+
+    public void setMessage( String msg ) {
+        System.out.println ( "Thanks for the Message: " + msg ) ;
     }
 
 }
