@@ -9,11 +9,11 @@ import org.restlet.representation.* ;
 import org.restlet.ext.json.* ;
 import org.restlet.data.* ;
 
-/**
+/*
    Defines a single test case running in its own thread.
    Each test case connects to a URL (via HTTP GET) and
    grabs the number of bytes or error condition.
-**/
+*/
 public class RunLoadTest {
 
    /** URL to run the test */
@@ -25,7 +25,7 @@ public class RunLoadTest {
    /** Used to Signal a Stop Request to all running threads */
    private static boolean out_of_time = false ;  
 
-   /**
+   /*
    Constructor which assigns the thread to a group and its source URL.
    @param grp Thread Group
    @param srcURL URL specification
@@ -37,7 +37,7 @@ public class RunLoadTest {
       this.myGroup = grp ;    
    }
 
-   /**
+   /*
    Signal the all threads to stop processing
    */
    public static void setOutOfTime() 
@@ -45,7 +45,7 @@ public class RunLoadTest {
       out_of_time = true ;
    }
    
-   /**
+   /*
    Test for threads to check for stop processing signal
    @return true, if out of time; otherwise, false.
    */
@@ -54,7 +54,7 @@ public class RunLoadTest {
       return out_of_time ;        
    }
    
-   /**
+   /*
    Creates a thread and runs a test case
    */   
    public void runTest() 
@@ -82,7 +82,7 @@ public class RunLoadTest {
          myThread.start() ;
    }
 
-   /**
+   /*
    Performs a test by sending HTTP Gets to the URL,
    and records the number of bytes returned.  Each
    test results are documented and displayed in
@@ -137,12 +137,11 @@ public class RunLoadTest {
    }
 
 
-   /**
+   /*
    Main Class Routine that reads in URL specs from a file and a duration (in miliseconds)
    of how long to run the test.
    
    USAGE: java RunLoadTest [Duration in seconds]</b>
-  
    */
    public static void main( String[] args ) 
    {
@@ -183,7 +182,7 @@ public class RunLoadTest {
       }
    }
 
-   /**
+   /*
    Helper method for main to load tests into a thread group and start each test case.
    */
    private static void loadThread( String name ) {              
