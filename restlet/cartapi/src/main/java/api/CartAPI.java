@@ -9,7 +9,7 @@ public class CartAPI {
 
     public static Order getOrder() {
         Random rn = new Random();
-        int idx = rn.nextInt(3);
+        int idx = rn.nextInt(6);
         return CartAPI.orders.get( idx ) ;
     }
 
@@ -32,6 +32,25 @@ public class CartAPI {
         order3.items.add( new OrderItem(1,"Packet of Headache Pills", 9.75) ) ;
         order3.items.add( new OrderItem(1,"Box of Imported Chocolates", 11.25) ) ;
         CartAPI.orders.add( order3 ) ;
+
+        Order order4 = new Order() ;
+        order4.items.add( new OrderItem(2,"Book", 12.49) ) ;
+        order4.items.add( new OrderItem(2,"Music CD", 14.99) ) ;
+        order4.items.add( new OrderItem(1,"Chocolate Bar", 0.85) ) ;
+        CartAPI.orders.add( order4 ) ;
+
+        Order order5 = new Order() ;
+        order5.items.add( new OrderItem(1,"Box of Imported Chocolates", 10.00) ) ;
+        order5.items.add( new OrderItem(5,"Bottle of Imported Perfume", 47.50) ) ;
+        CartAPI.orders.add( order5 ) ;
+
+        Order order6 = new Order() ;
+        order6.items.add( new OrderItem(1,"Bottle of Imported Perfume", 27.99) ) ;
+        order6.items.add( new OrderItem(2,"Bottle of Perfume", 18.99) ) ;
+        order6.items.add( new OrderItem(1,"Packet of Headache Pills", 9.75) ) ;
+        order6.items.add( new OrderItem(2,"Box of Imported Chocolates", 11.25) ) ;
+        CartAPI.orders.add( order6 ) ;
+
         
     }
 
