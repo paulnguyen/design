@@ -1,0 +1,17 @@
+
+
+import view.View;
+import model.Model;
+
+public class Controller implements ActionListener, KeyListener, WindowListener, MouseListener {
+ 
+	protected View view;
+	 
+	protected Model model;
+	 
+	protected Controller Controller(Model model, View view) {
+		return null;
+	}
+	 
+}
+ 
