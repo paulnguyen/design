@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=model\ view
+comment0.target=Controller\ Controller(model.Model,\ view.View)
+numComments=1

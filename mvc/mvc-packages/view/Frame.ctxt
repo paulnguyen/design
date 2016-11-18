@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=w\ h
+comment0.target=void\ setSize(int,\ int)
+comment1.params=content
+comment1.target=void\ setContent(Panel)
+comment2.params=
+comment2.target=Panel\ getContent()
+numComments=3
