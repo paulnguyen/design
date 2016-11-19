@@ -5,7 +5,6 @@ import controller.* ;
 public class Panel {
  
 	private String name;
-	 
 	private View view;
 	 
 	public void Panel(String name) {

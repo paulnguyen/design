@@ -1,8 +1,8 @@
 
 
-package view ;
+package controller ;
 
-public interface ActionListener
+public interface IActionListener
 {
     public void actionEvent( String event ) ;
 

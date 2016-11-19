@@ -1,8 +1,5 @@
 
-
-package controller ;
-
-public class Main {
+public class App {
  
 	public void main(String[] args) {
 	 

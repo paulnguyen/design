@@ -1,24 +1,44 @@
 
 package controller ;
 
-import model.Model;
-import view.View;
+import model.* ;
+import view.* ;
 
-//import java.awt.event.ActionListener;
-//import java.awt.event.KeyListener;
-//import java.awt.event.MouseListener;
-//import java.awt.event.WindowListener;
+public abstract class Controller implements IObserver, IActionListener, IKeyListener, IWindowListener, IMouseListener
+{
 
-//public class Controller implements ActionListener, KeyListener, WindowListener, MouseListener {
+    private Model model ;
+    private View view ;
+    
+    public Controller( )
+    {
+        model = null ;
+        view = null ;
+    }
 
-public class Controller {
- 
-	protected View view;
-	protected Model model;
-	 
-	protected Controller Controller(Model model, View view) {
-		return null;
-	}
-	 
+    public void initialize( Model m, View v )
+    {   
+        this.model = m ;
+        this.view = v ;
+    }
+    
+    public void update() 
+    {
+    }
+    
+    public void setInput( String msg )
+    {
+        model.setData( "Hello " + msg ) ;
+    }
+
+    public void windowEvent() { }
+    public void mouseEvent() { }
+    public void keyEvent() { }
+    
+    public void actionEvent( Constants event ) 
+    { 
+      if ( event.equals( Constants.QUIT ) )
+        System.out.println( "  Goodbye!" ) ;
+    }
+    
 }
- 
