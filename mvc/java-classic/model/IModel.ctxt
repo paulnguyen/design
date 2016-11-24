@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ notifyObservers()
+comment1.params=data
+comment1.target=void\ setData(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getData()
+numComments=3
