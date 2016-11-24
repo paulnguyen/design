@@ -4,7 +4,7 @@ package view;
 import model.IObserver ;
 import model.IModel ;
 
-public class View implements IObserver
+public class View implements IView, IObserver
 {
     private IModel model ;
     private String output ;

@@ -2,13 +2,16 @@ package view;
 
 import model.Model ;
 import controller.Controller ;
+import model.IObserver ;
+import controller.IController ;
 import controller.IActionCommand ;
+import controller.IActionListener ;
 
 public class Frame
 {
     private String title ;
     private Model model ;
-    private Controller controller ;
+    private IController controller ;
     private IActionCommand button ;
     private View view ;
     
@@ -19,7 +22,7 @@ public class Frame
         this.view = new View() ;
         this.controller = new Controller() ;
         this.model.attachObserver( view ) ;
-        this.model.attachObserver( controller ) ; 
+        this.model.attachObserver( (IObserver) controller ) ; 
         this.view.initialize( model ) ;
         this.controller.initialize( model, view ) ;
     }
@@ -27,7 +30,7 @@ public class Frame
     public void setButton( IActionCommand cmd )
     {
         this.button = cmd ;
-        this.button.setReceiver( controller ) ;
+        this.button.setReceiver( (IActionListener) controller ) ;
     }
     
     public void enterInput( String input )

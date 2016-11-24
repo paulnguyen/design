@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=m
+comment0.target=void\ initialize(model.IModel)
+comment1.params=
+comment1.target=void\ update()
+comment2.params=
+comment2.target=void\ display()
+numComments=3

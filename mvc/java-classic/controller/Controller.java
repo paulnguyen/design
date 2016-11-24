@@ -4,7 +4,7 @@ import view.View ;
 import model.Model ;
 import model.IObserver ;
 
-public class Controller implements IObserver, IActionListener, IKeyListener, IWindowListener, IMouseListener
+public class Controller implements IController, IObserver, IActionListener, IKeyListener, IWindowListener, IMouseListener
 {
 
     private Model model ;
