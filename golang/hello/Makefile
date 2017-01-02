@@ -5,9 +5,6 @@ clean:
 	find . -name "main" -exec rm -f {} \; > /dev/null 2>&1 
 	go clean
 
-compile:
-	go build main
-
 build:
 	go build main
 
@@ -19,3 +16,5 @@ format:
 
 install:
 	go install main
+
+
