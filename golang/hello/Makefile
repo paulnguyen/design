@@ -1,4 +1,6 @@
 
+# https://tour.golang.org/welcome
+
 all: clean
 
 clean: 
@@ -10,6 +12,9 @@ build:
 
 run:
 	go run src/main/hello.go
+
+playground:
+	go run src/playground/main.go
 
 format:
 	go fmt main

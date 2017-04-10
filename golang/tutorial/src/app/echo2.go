@@ -1,7 +1,6 @@
 // Copyright © 2016 Alan A. A. Donovan & Brian W. Kernighan.
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-// Echo2 prints its command-line arguments.
 package main
 
 import (
@@ -36,17 +35,5 @@ new contents. The += statement makes a new string by concatenating the
 old string. If the amount of data involved is large, this could be costly.
 
 	s += sep + arg
-
-A simpler and more efficient solution would be to use the Join function
-from the strings package:
-
-	func main() {
-    	fmt.Println(strings.Join(os.Args[1:], " "))
-	}
-
- Finally, if we don’t care about format but just want to see the values,
- perhaps for debugging, we can let Println format the results for us:
-
- 	fmt.Println(os.Args[1:])
 
 */
