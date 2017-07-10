@@ -12,10 +12,12 @@ build:
 run:
 	go run src/app/$(app).go
 
+main:
+	go run src/app/main.go
+
 format:
 	go fmt app
 
 install:
 	go install app
-
 
