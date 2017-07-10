@@ -1,5 +1,5 @@
 
-/**
+/*
 
 Default Groovy Imports:
 
@@ -36,5 +36,5 @@ Groovy Style Guide:
 
 http://groovy-lang.org/style-guide.html
 
-**/
+*/
 
