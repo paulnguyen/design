@@ -10,12 +10,11 @@ build:
 	mv app bin
 
 run:
-	go run src/app/$(app).go
+	./bin/app repo:golang/go is:open json decoder
 
 format:
 	go fmt app
 
 install:
 	go install app
-
 

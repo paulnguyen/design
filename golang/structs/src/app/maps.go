@@ -9,6 +9,8 @@ func main() {
 
 	/*
 
+		https://www.safaribooksonline.com/library/view/the-go-programming/9780134190570/ebook_split_037.html
+	
 		In Go, a map is a reference to a hash table, and a map type is written
 		map[K]V, where K and V are the types of its keys and values. All of the keys
 		in a given map are of the same type, and all of the values are of the same

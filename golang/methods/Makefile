@@ -6,15 +6,16 @@ clean:
 	rm -rf bin/*
 	go clean
 
-build:
+build-app:
 	go build src/app/$(app).go
 	mv $(app) bin
 
-run:
+run-app:
 	go run src/app/$(app).go
-
-main:
-	go run src/app/main.go
 
 format:
 	go fmt app
+
+
+
+

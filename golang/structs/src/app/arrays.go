@@ -4,8 +4,10 @@ import "fmt"
 
 /*
 
-By default, the elements of a new array variable are initially set to the zero
-value for the element type, which is 0 for numbers.
+	https://www.safaribooksonline.com/library/view/the-go-programming/9780134190570/ebook_split_035.html
+
+	By default, the elements of a new array variable are initially set to the zero
+	value for the element type, which is 0 for numbers.
 
 */
 
