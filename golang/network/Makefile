@@ -19,10 +19,10 @@ main:
 format:
 	go fmt app
 
-http1:
+test1:
 	curl http://localhost:8000
 
-http2:
+test2:
 	curl http://localhost:8000/list
 	curl http://localhost:8000/price?item=socks
 	curl http://localhost:8000/price?item=shoes

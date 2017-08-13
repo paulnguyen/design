@@ -123,7 +123,7 @@ func main() {
 
 	*/
 
-	fmt.Println("**** JSON unmarshaling (JSON -> Go) ****")
+	fmt.Println("**** JSON Marshaling (JSON -> Go) ****")
 	data, err := json.Marshal(movies)
 	if err != nil {
 		log.Fatalf("JSON marshaling failed: %s", err1)
