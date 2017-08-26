@@ -6,7 +6,7 @@ func main() {
 
 	/*
 
-		https://www.safaribooksonline.com/library/view/the-go-programming/9780134190570/ebook_split_036.html
+	   https://www.safaribooksonline.com/library/view/the-go-programming/9780134190570/ebook_split_036.html
 
 	   Arrays and slices are intimately connected. A slice is a lightweight data
 	   structure that gives access to a subsequence (or perhaps all) of the elements
