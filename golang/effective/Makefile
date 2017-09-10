@@ -14,5 +14,9 @@ run-app:
 
 format:
 	go fmt app
+	go fmt main
+
+doc:
+	go doc app
 
 

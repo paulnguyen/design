@@ -20,18 +20,14 @@ def sayHello(name)
 
 println sayHello('John')
 
-def closure = { param -> println( "hello ${param}" ) }
-closure.call( "world!" )
+def closure2 = { param -> println( "hello ${param}" ) }
+closure2.call( "world!" )
 
 def displayItem = { x -> println x+1 }
 [1, 2, 3, 4, 5].each( displayItem )
 
-printMe( it )
-{
-    println it
-}
 list = [1, 2, 3, 4, 5]
 for ( item in list )
-    printMe(item)
+    println(item)
     
 [1, 2, 3, 4, 5].each ( {println it} )
