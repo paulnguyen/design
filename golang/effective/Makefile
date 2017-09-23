@@ -10,11 +10,11 @@ main:
 	go run src/app/main.go
 
 run-app:
-	go run src/main/$(app).go
+	go run src/lab/$(app).go
 
 format:
 	go fmt app
-	go fmt main
+	go fmt lab
 
 doc:
 	go doc app
