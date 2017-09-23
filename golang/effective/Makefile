@@ -10,7 +10,7 @@ main:
 	go run src/app/main.go
 
 run-app:
-	go run src/app/$(app).go
+	go run src/main/$(app).go
 
 format:
 	go fmt app

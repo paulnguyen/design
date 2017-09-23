@@ -2,7 +2,7 @@
 
 	https://gobyexample.com/arrays
 
-	In Go, an _array_ is a numbered sequence of elements of a
+	In Go, an array is a numbered sequence of elements of a
 	specific length.
 
 */
