@@ -40,6 +40,7 @@ func main() {
     // to here. This `Scanln` code requires we press a key
     // before the program exits.
     var input string
+    fmt.Println("Type Enter:")
     fmt.Scanln(&input)
     fmt.Println("done")
 }
