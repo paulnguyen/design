@@ -1,12 +1,14 @@
 #BlueJ class context
-comment0.params=x\ y
-comment0.target=void\ touch(int,\ int)
-comment1.params=next
-comment1.target=void\ setNext(ITouchEventHandler)
-comment2.params=
-comment2.target=java.lang.String\ display()
-comment3.params=c
-comment3.target=void\ addSubComponent(IDisplayComponent)
-comment4.params=c\ key
-comment4.target=void\ keyEventUpdate(int,\ java.lang.String)
-numComments=5
+comment0.target=Passcode
+comment0.text=\n\ Write\ a\ description\ of\ class\ Passcode\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=x\ y
+comment1.target=void\ touch(int,\ int)
+comment2.params=next
+comment2.target=void\ setNext(ITouchEventHandler)
+comment3.params=
+comment3.target=java.lang.String\ display()
+comment4.params=c
+comment4.target=void\ addSubComponent(IDisplayComponent)
+comment5.params=c\ key
+comment5.target=void\ keyEventUpdate(int,\ java.lang.String)
+numComments=6

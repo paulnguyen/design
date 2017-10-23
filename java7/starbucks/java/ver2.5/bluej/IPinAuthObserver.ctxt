@@ -1,4 +1,5 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ authEvent()
-numComments=1
+comment0.target=IPinAuthObserver
+comment1.params=
+comment1.target=void\ authEvent()
+numComments=2

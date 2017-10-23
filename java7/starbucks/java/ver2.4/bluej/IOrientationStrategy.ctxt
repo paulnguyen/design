@@ -1,6 +1,5 @@
 #BlueJ class context
-comment0.params=s
-comment0.target=void\ display(IScreen)
+comment0.target=IOrientationStrategy
 comment1.params=
 comment1.target=void\ selectA()
 comment2.params=

@@ -1,12 +1,13 @@
 #BlueJ class context
-comment0.params=s
-comment0.target=void\ display(IScreen)
-comment1.params=
-comment1.target=void\ selectA()
+comment0.target=IOrientationStrategy
+comment1.params=s
+comment1.target=void\ display(IScreen)
 comment2.params=
-comment2.target=void\ selectB()
+comment2.target=void\ selectA()
 comment3.params=
-comment3.target=void\ selectC()
+comment3.target=void\ selectB()
 comment4.params=
-comment4.target=void\ selectD()
-numComments=5
+comment4.target=void\ selectC()
+comment5.params=
+comment5.target=void\ selectD()
+numComments=6

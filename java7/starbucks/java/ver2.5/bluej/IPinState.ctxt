@@ -1,10 +1,11 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ backspace()
-comment1.params=digit
-comment1.target=void\ number(java.lang.String)
-comment2.params=
-comment2.target=void\ validPin()
+comment0.target=IPinState
+comment1.params=
+comment1.target=void\ backspace()
+comment2.params=digit
+comment2.target=void\ number(java.lang.String)
 comment3.params=
-comment3.target=void\ invalidPin()
-numComments=4
+comment3.target=void\ validPin()
+comment4.params=
+comment4.target=void\ invalidPin()
+numComments=5

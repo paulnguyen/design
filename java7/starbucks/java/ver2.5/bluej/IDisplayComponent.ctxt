@@ -1,6 +1,7 @@
 #BlueJ class context
-comment0.params=
-comment0.target=java.lang.String\ display()
-comment1.params=c
-comment1.target=void\ addSubComponent(IDisplayComponent)
-numComments=2
+comment0.target=IDisplayComponent
+comment1.params=
+comment1.target=java.lang.String\ display()
+comment2.params=c
+comment2.target=void\ addSubComponent(IDisplayComponent)
+numComments=3

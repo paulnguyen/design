@@ -1,12 +1,13 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ landscape()
+comment0.target=IApp
 comment1.params=
-comment1.target=void\ portrait()
-comment2.params=x\ y
-comment2.target=void\ touch(int,\ int)
-comment3.params=
-comment3.target=void\ display()
-comment4.params=c
-comment4.target=void\ execute(java.lang.String)
-numComments=5
+comment1.target=void\ landscape()
+comment2.params=
+comment2.target=void\ portrait()
+comment3.params=x\ y
+comment3.target=void\ touch(int,\ int)
+comment4.params=
+comment4.target=void\ display()
+comment5.params=c
+comment5.target=void\ execute(java.lang.String)
+numComments=6

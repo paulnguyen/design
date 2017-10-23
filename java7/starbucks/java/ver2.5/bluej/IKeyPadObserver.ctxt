@@ -1,4 +1,5 @@
 #BlueJ class context
-comment0.params=numKeys\ key
-comment0.target=void\ keyEventUpdate(int,\ java.lang.String)
-numComments=1
+comment0.target=IKeyPadObserver
+comment1.params=numKeys\ key
+comment1.target=void\ keyEventUpdate(int,\ java.lang.String)
+numComments=2
