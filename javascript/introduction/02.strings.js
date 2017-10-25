@@ -30,3 +30,7 @@ console.log( "'hello'.length = ", 'hello'.length ) ; // 5
 console.log( "'hello'.charAt(0) = ", 'hello'.charAt(0) ); // "h"
 console.log( "'hello, world'.replace('hello', 'goodbye') = ", 'hello, world'.replace('hello', 'goodbye') ); // "goodbye, world"
 console.log( "'hello'.toUpperCase() = ", 'hello'.toUpperCase() ); // "HELLO"
+
+
+
+
