@@ -1,7 +1,7 @@
 /*
 	REF:  https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
 
-    Along with objects, functions are the core component in understanding
+  Along with objects, functions are the core component in understanding
 	JavaScript. The most basic function couldn't be much simpler:
 
 */
