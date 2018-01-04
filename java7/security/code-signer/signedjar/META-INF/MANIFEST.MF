@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Created-By: 1.7.0_11 (Oracle Corporation)
-
-Name: Count.class
-SHA-256-Digest: BVqzeH6p+eDUBdi8WkjgYQ2ISpwwm+tU1pTLTrqMU+I=
-

@@ -1,1 +1,0 @@
-class Pet(name : String)

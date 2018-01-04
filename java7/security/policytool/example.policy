@@ -1,8 +1,0 @@
-/* AUTOMATICALLY GENERATED ON Tue Feb 24 04:21:56 EST 2015*/
-/* DO NOT EDIT */
-
-grant codeBase "file:/home/user/CMPE279/modules/module8/java/policytool" {
-  permission java.util.PropertyPermission "user.home", "read";
-  permission java.util.PropertyPermission "java.home", "read";
-};
-

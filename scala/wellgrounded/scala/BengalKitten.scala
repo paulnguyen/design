@@ -1,1 +1,0 @@
-class BengalKitten(name : String) extends Cat(name : String)

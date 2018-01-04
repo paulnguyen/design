@@ -1,1 +1,0 @@
-class Dog(name : String) extends Pet(name : String)

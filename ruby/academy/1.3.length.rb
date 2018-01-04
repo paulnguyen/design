@@ -1,3 +1,0 @@
-
-"Hello Tom".length
-

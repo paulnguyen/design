@@ -1,1 +1,0 @@
-java GenSig datafile.txt
