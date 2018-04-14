@@ -58,3 +58,9 @@ run-state:
 run-strategy:
 	javac strategy/*.java
 	java  strategy.Tester
+
+run-interpreter:
+	javac interpreter/*.java
+	java  interpreter.InterpreterExample
+
+
