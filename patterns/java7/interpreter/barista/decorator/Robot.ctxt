@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Robot
+comment1.params=
+comment1.target=java.lang.String\ getCommand()
+comment2.params=o
+comment2.target=void\ setOption(java.lang.String)
+numComments=3

@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=iPhone
+comment1.params=
+comment1.target=iPhone()
+comment2.params=s
+comment2.target=void\ setDecaf(java.lang.String)
+comment3.params=s
+comment3.target=void\ setShots(java.lang.String)
+comment4.params=s
+comment4.target=void\ setMilk(java.lang.String)
+comment5.params=s
+comment5.target=void\ setDrink(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ sendCommand()
+numComments=7
