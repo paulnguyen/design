@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<bean id="transactionManagement"
+		class="ajia.transaction.AnnotationDrivenTransactionManagementAspect"
+		factory-method="aspectOf">
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<context:component-scan base-package="ajia">
+		<context:exclude-filter expression="ajia.web..*"
+			type="aspectj" />
+	</context:component-scan>
+</beans>
+
+	<!--
+		Listing 14.9 Configuring transaction-management aspect for AspectJ
+		weaving
+	-->

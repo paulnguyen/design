@@ -1,0 +1,7 @@
+<aspectj>
+	<aspects>
+		<aspect name="ajia.security.SecurityAspect"/>
+	</aspects>
+</aspectj>
+
+<!-- Listing 2.8 aop.xml specifying the configuration to load-time weaver -->

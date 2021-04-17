@@ -1,0 +1,6 @@
+<Context path="/jpetstore" reloadable="false">
+	<Loader loaderClass="org.springframework.instrument.classloading.tomcat.TomcatInstrumentableClassLoader"
+			useSystemClassLoaderAsParent="false"/>
+</Context>
+
+<!-- Listing 9.11 Configuration to replacing Tomcat’s classloader (META-INF/context.xml) -->

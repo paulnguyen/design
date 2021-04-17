@@ -1,0 +1,12 @@
+<aspectj>
+    <aspects>                                                                
+		<aspect name="ajia.monitoring.SystemMonitoringAspect"/>                                             
+    </aspects>                                                               
+
+    <weaver>                                                                 
+        <include within="ajia..*"/>                                          
+        <exclude within="*..*EnhancerByCGLIB*..*"/>                          
+        <exclude within="*..*.*$$EnhancerByCGLIB$$*"/>                       
+        <exclude within="*..*.*$$FastClassByCGLIB$$*"/>                      
+    </weaver>                                                                
+</aspectj>

@@ -1,0 +1,57 @@
+<project name="Section2.5.2BinaryWeaving" default="run-woven">
+	<import file="../build-common.xml"/>
+	
+	<property name="aspect.dir" value="aspects" />
+	<property name="woven.dir" value="woven" /> 
+
+	<target name="clean" description="Removes all directories related to this build.">
+		<delete dir="${class.dir}" />
+		<delete dir="${aspect.dir}" />		
+		<delete dir="${woven.dir}" />
+	</target>
+	
+	<target name ="compile-classes" depends="_validate-properties">
+		<mkdir dir="${class.dir}" />
+		
+		<javac destdir="${class.dir}" srcdir="${src.dir}">
+			<exclude name="ajia/security/SecurityAspect.java" />
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+		
+	<target name="run-unwoven" depends="compile-classes">
+        <java classname="ajia.main.Main" fork="true">
+        	<classpath refid="project.class.path"/>
+		</java>
+    </target>
+
+	<target name ="compile-aspect" depends="compile-classes">
+		<mkdir dir="${aspect.dir}" />
+		
+		<javac destdir="${aspect.dir}" srcdir="${src.dir}">
+			<include name="ajia/security/SecurityAspect.java"/>
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+		
+    <target name="binary-weave" depends="compile-classes,compile-aspect">
+        <mkdir dir="${woven.dir}"/>
+        <iajc destdir="${woven.dir}">
+        	<inpath>
+        		<pathelement location="${class.dir}" />
+        		<pathelement location="${aspect.dir}" />
+        	</inpath>
+			<aspectpath location="${aspect.dir}" />
+        	
+        	<classpath refid="project.class.path" />
+		</iajc>
+    </target>
+
+	<target name="run-woven" depends="binary-weave">
+        <java classname="ajia.main.Main" fork="true">
+        	<sysproperty key="ant.run" value="true"/>
+		    <classpath path="${woven.dir}" />
+        	<classpath refid="project.class.path" /> 
+		</java>
+    </target>
+</project>

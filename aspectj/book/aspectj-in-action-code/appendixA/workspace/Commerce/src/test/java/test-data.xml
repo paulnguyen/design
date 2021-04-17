@@ -1,0 +1,20 @@
+<dataset>
+	<products id="1001" name="Product A" description="Product A description" price="1.0"/>
+	<products id="1002" name="Product B" description="Product B description" price="2.0"/>
+	<products id="1003" name="Product C" description="Product C description" price="3.0"/>
+	<products id="1004" name="Product D" description="Product D description" price="4.0"/>
+	
+	<inventoryItems id="1" quantityOnHand="0" product_id="1001"/>
+	<inventoryItems id="2" quantityOnHand="1" product_id="1002"/>
+	<inventoryItems id="3" quantityOnHand="2" product_id="1003"/>
+	
+	<orders id="2001" placed="false"/>
+	<orders id="2002" placed="false"/>
+	<orders id="2003" placed="false"/>
+	<orders id="2004" placed="false"/>
+
+	<lineItems id="1" product_id="1001" quantity="1" unitPrice="1.0" order_id="2001"/>
+	<lineItems id="2" product_id="1002" quantity="2" unitPrice="2.0" order_id="2001"/>
+	
+</dataset>
+

@@ -1,0 +1,35 @@
+<project name="Section2.4AspectJAlternativeSyntax" default="run-javac">
+	<import file="../build-common.xml"/>
+	
+	<target name="clean" description="Removes all directories related to this build.">
+		<delete dir="${class.dir}" />
+	</target>
+	
+	<target name ="compileWithJavac" depends="_validate-properties">
+		<mkdir dir="${class.dir}" />
+		
+		<javac destdir="${class.dir}" srcdir="${src.dir}">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+		
+	<target name="run-javac" depends="compileWithJavac">
+        <java classname="ajia.main.Main" fork="true">
+        	<classpath refid="project.class.path"/>
+		</java>
+    </target>
+	
+    <target name="compileWithAjc" depends="_validate-properties">
+        <mkdir dir="${class.dir}"/>
+    	
+        <iajc destdir="${class.dir}" srcdir="${src.dir}" source="1.5">
+        	<classpath refid="project.class.path" />
+		</iajc>
+    </target>
+
+	<target name="run-ajc" depends="compileWithAjc">
+        <java classname="ajia.main.Main" classpathref="project.class.path" fork="true">
+        	<sysproperty key="ant.run" value="true"/>
+		</java>
+    </target>
+</project>

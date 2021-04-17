@@ -1,0 +1,9 @@
+#Thu Nov 13 14:06:10 EST 2008
+DELEGATES_PREFERENCE=delegateValidatorList
+USER_BUILD_PREFERENCE=enabledBuildValidatorListorg.eclipse.wst.html.internal.validation.HTMLValidator;org.eclipse.jst.jsp.core.internal.validation.JSPBatchValidator;org.eclipse.jst.j2ee.internal.classpathdep.ClasspathDependencyValidator;org.eclipse.wst.wsi.ui.internal.WSIMessageValidator;org.eclipse.jst.jsf.validation.internal.appconfig.AppConfigValidator;org.eclipse.wst.common.componentcore.internal.ModuleCoreValidator;org.eclipse.wst.dtd.core.internal.validation.eclipse.Validator;org.eclipse.jst.j2ee.internal.web.validation.UIWarValidator;org.eclipse.jst.jsf.validation.internal.JSPSemanticsValidator;org.eclipse.jst.jsp.core.internal.validation.JSPContentValidator;
+USER_MANUAL_PREFERENCE=enabledManualValidatorListorg.eclipse.wst.html.internal.validation.HTMLValidator;org.eclipse.jst.jsp.core.internal.validation.JSPBatchValidator;org.eclipse.jst.j2ee.internal.classpathdep.ClasspathDependencyValidator;org.eclipse.wst.wsi.ui.internal.WSIMessageValidator;org.eclipse.jst.jsf.validation.internal.appconfig.AppConfigValidator;org.eclipse.wst.common.componentcore.internal.ModuleCoreValidator;org.eclipse.wst.dtd.core.internal.validation.eclipse.Validator;org.eclipse.jst.j2ee.internal.web.validation.UIWarValidator;org.eclipse.jst.jsf.validation.internal.JSPSemanticsValidator;org.eclipse.jst.jsp.core.internal.validation.JSPContentValidator;
+USER_PREFERENCE=overrideGlobalPreferencesfalse
+eclipse.preferences.version=1
+override=false
+suspend=false
+vf.version=3

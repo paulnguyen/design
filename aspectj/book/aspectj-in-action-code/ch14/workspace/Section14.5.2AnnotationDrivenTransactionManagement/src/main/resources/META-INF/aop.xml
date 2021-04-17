@@ -1,0 +1,28 @@
+<aspectj>
+    <aspects>
+    	 
+        <aspect name="ajia.tracing.AbstractTraceAspect"/>
+ 		<aspect name="ajia.tracing.TraceAspect"/>
+        <aspect name="ajia.tracing.TransactionTraceAspect"/>
+        
+		<!--  We don't want Spring's transaction management aspect to be woven in -->
+		<exclude within="org.springframework..*"/>
+		
+         <!-- <aspect name="ajia.transaction.AnnotationDrivenTransactionManagementAspect"/> -->
+         <!-- <aspect name="ajia.security.SensitiveAnnotationFieldSecurityAspect"/>  -->
+        <!--         
+         <aspect name="ajia.security.ConsoleApplicationAuthenticationAspect"/>
+         <aspect name="ajia.security.SimpleAuthorizationAspect"/>
+         <aspect name="ajia.security.SecurityCoordinationAspect"/>
+        -->         
+    </aspects>
+
+    <weaver>                       
+        <!-- <include within="ajia..*"/>  -->   
+        <exclude within="*..*EnhancerByCGLIB*..*"/>
+        <exclude within="*..*.*$$EnhancerByCGLIB$$*"/>     
+        <exclude within="*..*.*$$FastClassByCGLIB$$*"/>                
+        <!-- <exclude within="org.springframework..*"/> -->                   
+  </weaver>                                                          
+
+</aspectj>

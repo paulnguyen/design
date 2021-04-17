@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="cacheAspect" class="ajia.caching.CacheAspect"
+		factory-method="aspectOf">
+		<property name="cache" ref="cache" />
+	</bean>
+
+	<bean id="cache" class="com.opensymphony.oscache.base.Cache">
+		<constructor-arg value="true" />
+		<constructor-arg value="true" />
+		<constructor-arg value="true" />
+	</bean>
+
+	<bean class="org.springframework.jmx.export.MBeanExporter">
+		<property name="beans">
+			<map>
+				<entry key="ajia:service=cacheAspect" value-ref="cacheAspect" />
+				<entry key="ajia:service=cache" value-ref="cache" />
+			</map>
+		</property>
+	</bean>
+</beans>
+
+	<!-- Listing 6.8 Configuring the aspect to inject dependencies -->

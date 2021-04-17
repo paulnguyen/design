@@ -1,0 +1,16 @@
+<aspectj>
+    <aspects>
+        <concrete-aspect name="ajia.tracing.SystemWideTraceAspect"
+            extends="ajia.tracing.IndentationTraceAspect">
+            <pointcut name="traced" expression="execution(* *.*(..))" />
+        </concrete-aspect>
+    </aspects>
+    <weaver>
+        <include within="ajia..*" />
+        <exclude within="*..*EnhancerByCGLIB*..*" />
+        <exclude within="*..*.*$$EnhancerByCGLIB$$*" />
+        <exclude within="*..*.*$$FastClassByCGLIB$$*" />
+    </weaver>
+</aspectj>
+
+<!-- Listing 10.13 aop.xml to weave in trace aspect -->

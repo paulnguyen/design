@@ -1,0 +1,9 @@
+
+public aspect AuditAspect {
+
+	public pointcut accountOperation() : call (* Account.*(..)) ;
+	
+	before() : accountOperation() {
+		System.out.println("Before: " + thisJoinPoint); 
+	}
+}

@@ -1,0 +1,21 @@
+<<<<<<< .mine
+#Wed Aug 05 11:43:54 PDT 2009
+activeProfiles=
+eclipse.preferences.version=1
+fullBuildGoals=process-test-resources
+includeModules=false
+resolveWorkspaceProjects=true
+resourceFilterGoals=process-resources resources\:testResources
+skipCompilerPlugin=true
+version=1
+=======
+#Thu Jul 09 15:39:15 PDT 2009
+activeProfiles=
+eclipse.preferences.version=1
+fullBuildGoals=process-test-resources
+includeModules=false
+resolveWorkspaceProjects=true
+resourceFilterGoals=process-resources resources\:testResources
+skipCompilerPlugin=true
+version=1
+>>>>>>> .r2628

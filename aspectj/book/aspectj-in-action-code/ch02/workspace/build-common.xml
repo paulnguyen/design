@@ -1,0 +1,25 @@
+<project name="Second-edition">
+    <property name="src.dir" value="src/main/java" />
+    <property name="class.dir" value="classes" />
+    <property file="${ant.file.Second-edition}/../../../build.properties"/>
+    
+    <target name="_validate-properties">
+        <fail unless="aspectj.home" message="aspectj.home must be set, check ${ant.file.Second-edition}/../../../build.properties"/>
+        <available property="_aspectj.home.valid" file="${aspectj.home}/lib/aspectjtools.jar"/>
+        <fail unless="_aspectj.home.valid" message="Invalid aspectj.home. Must point to the parent of the lib directory">
+        </fail>
+    </target>
+    
+    <path id="project.class.path">
+        <pathelement path="${class.dir}" />        
+        <pathelement location="${src.dir}" />
+        <pathelement location="${aspectj.home}/lib/aspectjtools.jar"/>
+        <pathelement location="${aspectj.home}/lib/aspectjrt.jar"/>
+    </path>
+    
+    <taskdef classpathref="project.class.path" resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties" />
+
+    <target name="clean" description="Removes all directories related to this build.">
+        <delete dir="${class.dir}" />
+    </target>
+</project>

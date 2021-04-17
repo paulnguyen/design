@@ -1,0 +1,13 @@
+<aspectj>
+	<aspects>
+		<aspect name="ajia.tracing.AbstractTraceAspect" />
+		<aspect name="ajia.tracing.TraceAspect" />
+		<aspect name="ajia.tracing.TransactionTraceAspect" />
+	</aspects>
+
+	<weaver>
+		<exclude within="*..*EnhancerByCGLIB*..*" />
+		<exclude within="*..*.*$$EnhancerByCGLIB$$*" />
+		<exclude within="*..*.*$$FastClassByCGLIB$$*" />
+	</weaver>
+</aspectj>

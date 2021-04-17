@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/context/spring-util-2.5.xsd">
+    <context:component-scan base-package="ajia" >
+        <context:exclude-filter expression="ajia.web..*" type="aspectj"/>
+    </context:component-scan>
+    
+</beans>
+
+<!-- Listing A.12 application-context.xml: Using component scanning -->
+

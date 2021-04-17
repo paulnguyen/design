@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+		http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+	
+	<!-- Get the products one time, at the beginning of the flow -->
+	<on-start>
+		<set name="flowScope.products" value="cartService.products"/>
+		<set name="flowScope.shippingOptions" value="cartService.shippingOptions"/>
+	</on-start>
+	
+	<!-- If not specified, the start state is the first state specified. -->
+	<view-state id="viewCart" view="viewcart">
+		<!-- cart is available to SWF but not stored on the session under that name when using AOP proxy -->
+		<on-render>
+			<!-- Carry cart from Spring app context to request scope -->
+			<set name="requestScope.shoppingCart" value="shoppingCart"/>
+			<set name="requestScope.recommendations" value="cartService.recommendations"/>
+		</on-render>
+		<transition on="addToCart" to="addProductToCart"/>
+		<transition on="register" to="register"/>
+		<transition on="login" to="paymentAndShipmentOptions"/>
+	</view-state>
+	
+	<subflow-state id="addProductToCart" subflow="addToCart">
+		<!-- This is where we go when the subflow returns. productAdded is
+		     the name of an end-state. -->
+		<transition on="productAdded" to="viewCart"/>
+	</subflow-state>
+	
+	<!-- New customers create a new account before moving forward -->
+	<subflow-state id="register" subflow="register">
+		<transition on="accountAdded" to="paymentAndShipmentOptions"/>
+		<transition on="cancelRegistration" to="viewCart"/>
+	</subflow-state>
+	
+	<!-- Payment and shipment options -->
+	<view-state id="paymentAndShipmentOptions" view="options">
+		<transition on="submit" to="confirmOrder"/>
+		<transition on="back" to="viewCart"/>
+	</view-state>
+	
+	<!-- Confirm order -->
+	<view-state id="confirmOrder" view="confirmorder">
+		<on-render>
+			<set name="requestScope.shoppingCart" value="shoppingCart"/>
+		</on-render>
+		<transition on="continue" to="thankYou">
+			<evaluate expression="cartService.submitOrderForPayment()"/>
+		</transition>
+	</view-state>
+	
+	<!-- Thank you page -->
+	<view-state id="thankYou" view="thanks">
+		<transition on="continue" to="shop"/>
+	</view-state>
+	
+	<!-- Exit the flow, letting the user return to shopping -->
+	<!-- See http://forum.springframework.org/showthread.php?t=51240 -->
+	<end-state id="shop" view="externalRedirect:contextRelative:/home.do"/>
+	
+	<global-transitions>
+		<transition on="cancelCheckout" to="shop"/>
+	</global-transitions>
+</flow>

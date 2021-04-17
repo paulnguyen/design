@@ -1,0 +1,27 @@
+
+public class Account {
+
+	int account_number;
+	double balance;
+
+	public Account(double deposit) {
+		balance = deposit;
+		int min = 1239871;
+		int max = 9999999;
+		int account_number = (int) Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+	public void debit(double amount) throws Exception {
+		System.out.println("Debit: " + String.valueOf(amount));
+		if (balance < amount) {
+			throw new Exception("Total balance not sufficient!");
+		} else {
+			balance = balance - amount;
+		}
+	}
+	
+	public String toString() {
+		return "Account: " + String.valueOf(account_number) ;
+	}
+
+}

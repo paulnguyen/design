@@ -1,0 +1,10 @@
+<project name="Java Library" default="compile">
+    <target name="compile">
+        <mkdir dir="dist" />
+        <mkdir dir="classes" />
+        <javac source="1.5" destdir="classes" srcdir="src/main/java" />
+        <jar destfile="dist/application.jar" basedir="classes" />
+    </target>
+</project>
+
+<!-- Listing B.4 Producing a jar file for Java sources -->

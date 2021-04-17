@@ -1,0 +1,16 @@
+
+public class Main {
+
+    public static void main(String[] args) {
+    	Account acct = new Account(100.00) ;
+    	try {
+    		acct.debit(50.00) ;
+    		acct.credit(500);
+    		boolean bal = acct.getBalance() ;
+    		System.out.println(acct) ;
+    	} catch (Exception e) {
+    		System.out.println(e) ;
+    	}
+    }	
+	
+}

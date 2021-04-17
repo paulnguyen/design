@@ -1,0 +1,17 @@
+<aspectj>
+  <aspects>
+     <!-- Assume ajia.monitoring.Monitoring is an abstract aspect with 
+          an abstract monitored() pointcut -->
+     <concrete-aspect name="ajia.monitoring.JDBCMonitoring"
+                      extends="ajia.monitoring.Monitoring">
+        <pointcut name="monitored" 
+                  expression="call(* java.sql.*.*(..))"/>
+     </concrete-aspect>
+     <!-- ... -->
+  </aspects>
+  <!-- ... -->
+</aspectj>
+
+
+
+<!-- Listing 8.2 Specifying concrete aspects using XML syntax  -->

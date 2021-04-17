@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                              http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                              http://www.springframework.org/schema/aop 
+                              http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+                              http://www.springframework.org/schema/tx
+                              http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+                              http://www.springframework.org/schema/util 
+                              http://www.springframework.org/schema/util/spring-util-2.5.xsd
+                              http://www.springframework.org/schema/context
+           					  http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<bean id="faultToleranceAspect" class="ajia.transaction.TransactionalRetryFaultToleranceAspect"
+		  factory-method="aspectOf">
+		<property name="retryTemplate" ref="retryTemplate" />
+	</bean>
+	
+	<bean id="retryTemplate" class="org.springframework.batch.retry.support.RetryTemplate">
+		<property name="retryPolicy" ref="retryPolicy" />
+	</bean>
+	
+	<bean id="retryPolicy"
+		  class="org.springframework.batch.retry.policy.ExceptionClassifierRetryPolicy">
+		<property name="policyMap">
+			<map>
+				<entry key="org.springframework.dao.ConcurrencyFailureException"
+					   value-ref="maxAttemptRetryPolicy" />
+				<entry key="org.springframework.dao.DataAccessResourceFailureException"
+					   value-ref="maxAttemptRetryPolicy" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="maxAttemptRetryPolicy"
+		  class="org.springframework.batch.retry.policy.SimpleRetryPolicy">
+		<property name="maxAttempts" value="3" />
+	</bean>
+</beans>
+
+<!-- Listing 14.15 fault-tolerance-context.xml -->

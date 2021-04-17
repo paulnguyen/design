@@ -1,0 +1,21 @@
+<aspectj>
+    <aspects>
+        <aspect name="ajia.tracing.AbstractTraceAspect"/>
+        <aspect name="ajia.tracing.TraceAspect"/>
+        <aspect name="ajia.tracing.TransactionTraceAspect"/>
+        <aspect name="ajia.transaction.TransactionalRetryFaultToleranceAspect"/>
+		
+        <!--
+        <aspect name="ajia.service.impl.FaultToleranceInventoryServiceTest.FaultInjector"/>
+        -->
+        <concrete-aspect name="ajia.SystemLevelPrecedence"
+                 precedence="ajia..*, org.springframework..*, *"/>
+    </aspects>
+
+    <weaver>                       
+        <exclude within="*..*EnhancerByCGLIB*..*"/>
+        <exclude within="*..*.*$$EnhancerByCGLIB$$*"/>     
+        <exclude within="*..*.*$$FastClassByCGLIB$$*"/>                
+  </weaver>                                                          
+
+</aspectj>

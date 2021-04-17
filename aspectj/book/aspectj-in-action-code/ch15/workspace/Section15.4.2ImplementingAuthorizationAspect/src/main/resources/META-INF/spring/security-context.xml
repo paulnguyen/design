@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                              http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                              http://www.springframework.org/schema/aop 
+                              http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+                              http://www.springframework.org/schema/util 
+                              http://www.springframework.org/schema/util/spring-util-2.5.xsd
+                              http://www.springframework.org/schema/security 
+                              http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+    <security:authentication-manager alias="authenticationManager">
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="ramnivas" password="aop"
+                    authorities="ROLE_USER,ROLE_SUPERVISOR" />
+                <security:user name="rod" password="spring"
+                    authorities="ROLE_USER" />
+            </security:user-service>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <bean id="authenticationSupport" class="ajia.security.AuthenticationSupport">
+        <property name="authenticationManager" ref="authenticationManager" />
+        <property name="loginUI" ref="loginService" />
+    </bean>
+
+    <bean id="loginService" class="ajia.security.SysoutLoginService" />
+
+    <bean id="authenticationAspect" class="ajia.security.ConsoleApplicationAuthenticationAspect"
+        factory-method="aspectOf">
+        <property name="authenticationSupport" ref="authenticationSupport" />
+    </bean>
+
+    <bean id="accessDecisionManager"
+        class="org.springframework.security.access.vote.UnanimousBased">
+        <property name="decisionVoters">
+            <list>
+                <bean
+                    class="org.springframework.security.access.vote.RoleVoter" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="securityMetadataSource" class="ajia.security.MappingBasedSecurityMetadataSource">
+        <property name="roleMapping">
+            <map>
+                <entry key="expire*" value="ROLE_SUPERVISOR" />
+                <entry key="reducePrice" value="ROLE_SUPERVISOR" />
+                <entry key="*" value="ROLE_USER" />
+            </map>
+        </property>
+    </bean>
+
+    <bean id="authorizationSupport" class="ajia.security.AuthorizationSupport">
+        <property name="accessDecisionManager" ref="accessDecisionManager" />
+        <property name="securityMetadataSource" ref="securityMetadataSource" />
+    </bean>
+    
+    <bean id="authorizationAspect" class="ajia.security.SimpleAuthorizationAspect"
+        factory-method="aspectOf">
+        <property name="authorizationSupport" ref="authorizationSupport" />
+    </bean>
+</beans>
+
+<!-- Listing 15.9 Authorization configuration for simple aspect -->
+<!-- Listing 15.4 Configuration for authentication -->

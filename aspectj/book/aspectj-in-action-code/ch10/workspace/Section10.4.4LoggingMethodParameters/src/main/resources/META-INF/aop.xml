@@ -1,0 +1,20 @@
+<aspectj>
+    <aspects><!--
+        <concrete-aspect name="ajia.tracing.TraceAspect2" extends="ajia.tracing.IndentationTraceAspect">
+        	<pointcut name="traced" expression="execution(* *(..))"/>
+        </concrete-aspect>
+    -->
+    <aspect name="ajia.tracing.RepositoryMonitoringAspect"/>
+    </aspects>
+
+    <weaver>                       
+        <include within="ajia..*"/> 
+<!--        <include within="org.springframework.transaction.PlatformTransactionManager+"/>-->
+        <exclude within="*..*EnhancerByCGLIB*..*"/>
+        <exclude within="*..*.*$$EnhancerByCGLIB$$*"/>     
+        <exclude within="*..*.*$$FastClassByCGLIB$$*"/>
+        <exclude within="org.apache..*"/>
+        <!-- <exclude within="org.springframework..*"/> -->                   
+  </weaver>                                                          
+
+</aspectj>

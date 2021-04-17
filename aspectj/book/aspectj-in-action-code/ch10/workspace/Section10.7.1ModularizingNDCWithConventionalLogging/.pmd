@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd>
+    <useProjectRuleSet>false</useProjectRuleSet>
+    <rules>
+        <rule>
+            <name>ApplicationContextInstantiated</name>
+            <ruleset>Custom ruleset</ruleset>
+        </rule>
+        <rule>
+            <name>NonSpringSingleton</name>
+            <ruleset>Custom ruleset</ruleset>
+        </rule>
+        <rule>
+            <name>UseOfApplicationContextAware</name>
+            <ruleset>Custom ruleset</ruleset>
+        </rule>
+    </rules>
+    <includeDerivedFiles>false</includeDerivedFiles>
+</pmd>

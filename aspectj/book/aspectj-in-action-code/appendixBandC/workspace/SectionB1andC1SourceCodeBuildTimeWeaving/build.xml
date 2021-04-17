@@ -1,0 +1,24 @@
+<project name="Source code build-time weaving" default="run">
+    <property file="../../../build.properties" />
+    
+    <taskdef classpath="${aspectj.home}/lib/aspectjtools.jar" resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties" />
+    
+    <path id="project.class.path">
+        <pathelement location="${aspectj.home}/lib/aspectjrt.jar" />
+    </path>
+    
+    <target name="compile">
+        <mkdir dir="classes" />
+        <iajc destdir="classes" source="1.5" classpathref="project.class.path">
+            <sourceroots>
+                <pathelement location="src/main/java" />
+            </sourceroots>
+        </iajc>
+    </target>
+    
+    <target name="run" depends="compile">
+        <java classname="ajia.main.Main" classpath="classes" classpathref="project.class.path" />
+    </target>
+</project>
+
+<!-- Listing B.1 Source coded build-time weaving through Ant -->

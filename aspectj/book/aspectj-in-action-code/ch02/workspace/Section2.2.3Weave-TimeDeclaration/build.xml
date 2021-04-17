@@ -1,0 +1,10 @@
+<project name="Section2.2.2InterTypeDeclaration" default="compile">
+	<import file="../build-common.xml"/>
+	
+    <target name="compile" depends="_validate-properties">
+        <mkdir dir="${class.dir}"/>
+        <iajc destdir="${class.dir}" source="1.5" srcdir="${src.dir}">
+        	<classpath refid="project.class.path" />
+		</iajc>
+    </target>
+</project>

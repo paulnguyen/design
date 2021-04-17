@@ -1,0 +1,20 @@
+<project name="Aspect Library" default="compile">
+	<!-- ... unchanged since B.1 -->
+	<property file="../../../build.properties"/>
+	
+	<taskdef classpath="${aspectj.home}/lib/aspectjtools.jar"
+	         resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties"/>
+	
+	<path id="project.class.path">
+	    <pathelement location="${aspectj.home}/lib/aspectjrt.jar"/>
+	</path>
+
+	<target name="compile">
+		<mkdir dir="dist" />
+		<iajc source="1.5" classpathref="project.class.path" outjar="dist/profiling.jar" xlintfile="xlint.properties">
+			<sourceroots>
+				<pathelement location="src/main/java" />
+			</sourceroots>
+		</iajc>
+	</target>
+</project>

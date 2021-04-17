@@ -1,0 +1,35 @@
+<project name="Section2.5.3LoadTimeWeaving" default="run">
+	<import file="../build-common.xml"/>
+	
+	<property name="aspect.dir" value="aspects" />
+	
+	<target name="clean" description="Removes all directories related to this build.">
+		<delete dir="${class.dir}" />
+		<delete dir="${aspect.dir}" />
+	</target>
+	
+	<target name ="compile" depends="_validate-properties">
+		<mkdir dir="${class.dir}" />
+		<mkdir dir="${aspect.dir}" />
+		
+		<javac destdir="${class.dir}" srcdir="${src.dir}" excludes="**/SecurityAspect.java" >
+			<classpath refid="project.class.path" />
+		</javac>
+
+		<javac destdir="${aspect.dir}" srcdir="${src.dir}" includes="**/SecurityAspect.java">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+		
+	<target name="run" depends="compile">
+        <java classname="ajia.main.Main" classpathref="project.class.path" fork="true">
+        	<jvmarg value="-javaagent:${aspectj.home}/lib/aspectjweaver.jar"/>
+        	<sysproperty key="ant.run" value="true"/>
+		    <classpath>
+		        <pathelement path="${class.dir}" />
+		    	<pathelement path="${aspect.dir}" />
+		    	<pathelement path="src/main/resources"/>
+	    	</classpath>
+		</java>
+    </target>
+</project>

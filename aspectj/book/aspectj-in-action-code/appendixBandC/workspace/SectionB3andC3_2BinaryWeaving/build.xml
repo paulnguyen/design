@@ -1,0 +1,47 @@
+<project name="Weaving into Java Library" default="run-woven">
+	<property file="../../../build.properties"/>
+	
+	<taskdef classpath="${aspectj.home}/lib/aspectjtools.jar"
+	         resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties"/>
+	
+	<path id="project.class.path">
+	    <pathelement location="${aspectj.home}/lib/aspectjrt.jar"/>
+	</path>
+
+	<target name="initialize">
+		<mkdir dir="dist" />
+		<copy todir="dist">
+			<fileset dir="../SectionB3andC3_1JavaLibrary/dist">
+				<include name="application.jar" />
+			</fileset>
+			<fileset dir="../SectionB2andC2AspectLibrary/dist">
+				<include name="profiling.jar" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="weave" depends="initialize">
+		<mkdir dir="dist" />
+		<iajc injars="dist/application.jar" aspectpath="dist/profiling.jar" outjar="dist/profiled-application.jar" classpathref="project.class.path">
+		</iajc>
+	</target>
+
+	<target name="run-normal" depends="weave">
+		<java classname="ajia.main.Main" classpathref="project.class.path">
+			<classpath>
+				<pathelement location="dist/application.jar" />
+			</classpath>
+		</java>
+	</target>
+	
+	<target name="run-woven" depends="weave">
+		<java classname="ajia.main.Main" classpathref="project.class.path">
+			<classpath>
+				<pathelement location="dist/profiled-application.jar" />
+				<pathelement location="dist/profiling.jar" />
+			</classpath>
+		</java>
+	</target>
+</project>
+
+<!-- Listing B.5 Weaving aspect library into jar files -->

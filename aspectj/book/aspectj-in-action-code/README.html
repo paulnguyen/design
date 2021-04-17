@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <style type="text/css" media="screen">
+<!--
+    .warning {
+		color: red; 
+		font-weight: bold;
+	}
+
+    blockquote {
+        margin-top: 1em;
+        margin-left: 1em;
+		margin-right: 1em;
+        padding: 1em;
+        font-weight: normal;
+        border: 1px #ccc solid;
+        border-left: 6px solid #ccc;
+        background: #eeeeff;
+    }
+	
+	body {
+	   background: #ffffff;
+	   margin-left: 3em;
+	   margin-right: 3em;
+	}
+	
+	img {
+		padding: 10px;
+	}
+	.content {
+	    border: 1px #ccc solid;
+		padding: 1em;
+	}
+	
+	.code {
+		color: black; 
+		background: #f0f0f0;
+		font-weight: bold;
+		margin-left: 1em;
+		margin-right: 20em;
+	}
+    -->
+    </style>
+    <title>
+      AspectJ in Action: Enterprise AOP with Spring Applications
+    </title>
+  </head>
+  <body>
+	<h1>
+	<p>
+	<a href="http://www.manning.com/laddad2/">AspectJ in Action, Second Edition</a>
+	<p>by <a href="http://ramnivas.com">Ramnivas Laddad</a></p>
+	</h1>
+	<div class="content">
+    <h2>
+      What's included
+    </h2>
+    <ul>
+      <li>Code for all chapters along with build scripts.
+      </li>
+      <li>Parent pom.xml files and a shared CommonPointcuts project.
+      </li>
+    </ul>
+    <p>
+      All build scripts are optimized for simplicity of distribution (for
+      example, the top-most parent POM declares dependencies for all projects 
+	  even though not all projects need all dependencies).
+    </p>
+    <blockquote>
+      <h2>
+        Getting support
+      </h2>
+      <p>
+        While a lot of care has been put into preparing the source packages,
+        you may encounter issues that are most likely related to either your
+        platform or the version of tools you use. In most cases, you will be able
+		to resolve issues by examining the failure and adjusting your environment.
+		However, if you get stuck, the best way to resolve such a problem is by visiting the 
+		<a href="http://www.manning-sandbox.com/forum.jspa?forumID=413">book's
+        forum</a>. You can search if the problem you encountered has been already
+		posted and resolved. If not, you can post a new message. 
+		<b>Please use this forum to post questions directly
+        related to the book and book's source code only.</b>
+      </p>
+      <p>
+        For general AspectJ questions, the best place to visit is <a href=
+        "https://dev.eclipse.org/mailman/listinfo/aspectj-users">AspectJ
+        Mailing List</a>.
+      </p>
+      <p>
+        For general Spring AOP questions, the best place to visit is <a href=
+        "http://forum.springsource.org/forumdisplay.php?f=31">Spring's AOP
+        forum</a>.
+      </p>
+      <p>
+        <b>Any suggestions to improve the user experience are welcome.</b>
+      </p>
+    </blockquote>
+    <h2>
+      Prerequisite
+    </h2>The specified version for each component represents the tested
+    version; a higher version may work as well.
+    <ol>
+      <li>
+        <a href="http://java.sun.com/javase/downloads/index.jsp">Java SE Development Kit (JDK) 5 or 6</a>
+      </li>
+      <li>
+        <a href="http://maven.apache.org/download.html">Maven 2.2.0</a>
+        <span class="warning">(Important: Lower versions of Maven may not work
+        with some of the projects.)</span>
+      </li>
+      <li>
+        <a href="http://ant.apache.org/bindownload.cgi">Ant 1.7.1</a> (Optional
+        for Maven users)
+      </li>
+      <li>
+        <a href="http://eclipse.org/aspectj">AspectJ 1.6.5</a>
+      </li>
+    </ol>
+		I assume that you have set your PATH environment variable to include JDK, AspectJ 
+		Maven, and Ant binaries.
+    <h2>
+      Installation
+    </h2>
+    <ol>
+      <li>From the top-level directory (where this HTML file resides), type the
+      following command:
+        <h2>
+          For Windows
+        </h2>
+        <p class="code">
+			&gt; install.bat                
+		</p>
+        <h2>
+          For Unix systems including Mac OS X
+        </h2>
+        <p class="code">
+			$ ./install.sh             
+		</p>
+		This will install the parent POMs and common projects to the local Maven
+		repository.
+      </li>
+      <li>(Optional for Maven users) Modify build.properties in the top-level
+      directory to point to the AspectJ home directory
+      </li>
+      <li>(Optional for Maven and Ant users) Modify (depending on your
+			platform) setHomes.bat or setHomes.sh to match your environment.
+      </li>
+    </ol>
+    <h2>Running from shell</h2>
+		<p>
+		For each section, you will find run.bat/run.sh or multiple
+		run*.bat/run*.sh scripts. Each of these scripts execute appropriate Maven goals, 
+		Ant targets, or shell commands and, in some cases, perform needed setup.
+		</p>
+		<blockquote>
+		Each run*.bat and run*.sh script, in most cases, is a simple wrapper around 'mvn' 
+		(and in some chapters, 'ant'). 
+		These shell scripts are provided for convenience that show the expected commands 
+		matching the text in the book. You may directly execute 'mvn' if you so choose.
+		</blockquote>
+		<p class="warning">
+		Note: You must execute install.bat or install.sh (which will require you to install Maven) 
+		before you can successfully execute these commands (even those that don't use Maven)
+		</p>
+		<blockquote>
+			Maven stack traces often take a bit of careful reading to understand the real error.
+			For example, in Section5.6SofteningCheckedException, you will need to observe the
+			stack trace carefully to see that the real reason is 
+			org.aspectj.lang.SoftException, which correctly illustrates the example in the book.
+		</blockquote>
+	<h2>
+      Setting up Eclipse
+    </h2>
+    <p>
+      The Eclipse distribution available with <a href=
+      "http://www.springsource.com/products/sts">SpringSource Tools Suite</a>
+      is <em>highly</em> recommended, since it comes preconfigured with all
+      required plugins.
+    </p>
+    <p>
+      Alternatively, you may install <a href=
+      "http://www.eclipse.org/downloads/">Eclipse 3.5 (Java EE edition)</a>
+      followed by installation of the <a href=
+      "http://m2eclipse.codehaus.org/">m2Eclipse</a>, <a href=
+      "http://eclipse.org/ajdt">AJDT</a>, and <a href=
+      "http://springide.org">Spring IDE</a> plugin.
+    </p>
+    <p>
+      Each chapter is packaged in Eclipse workspace style (but without the
+      workspace metadata). For example, for chapter 3, you will find the
+      ch03/workspace directory. For each chapter that you want to try, follow these steps
+	  (You will need to perform this step only once for each chapter):
+	  <ol>
+		<li>
+		Start STS or Eclipse. When prompted for the workspace, point to the 'workspace' 
+		directory of the chapter. 
+		<img src="images/launch.png"/>
+		</li>
+		<li>
+		Import the existing projects by invoking 
+		<ol>
+			<li>
+			File-&gt;Import... 
+			</li>
+			<img src="images/import.png"/>
+			<li>
+			In the dialog box that
+			appears, choose General/Existing Projects into Workspace 
+			<span class="warning">(Warning: Do not choose Maven Projects.)</span> 
+			<img src="images/import-projects.png"/>
+			</li>
+		</ol>
+		You may get a prompt to enable AJDT weaving, choose "Yes" and let Eclipse restart. 
+		This will happen only once per installation of Eclipse.
+		</li>
+		<li>
+		Let the workspace refresh complete... now you know what to do!
+		<img src="images/projects.png"/>
+		</li>
+		<blockquote>
+		You need to launch a few applications using the load-time weaver. 
+		Look for a file with .launch extension (such as LoadTimeWeaver.lauch in chapter 2)	
+		in Eclipse package explorer. You can launch such a file through "Run As" menu.
+		<p class="warning">If a launch file is provided, executing the driver or tests
+		without it will likely result in unexpected output or test failures.</p>
+		</blockquote>
+	</ol>
+    </p>
+    
+    <h2>
+      Known issues
+    </h2>
+    <ul>
+      <li>Although each project is Maven enabled, importing it as Maven Project
+      leads to unexpected issues.
+      </li>
+    </ul>
+	</div class="content">
+  </body>
+</html>
