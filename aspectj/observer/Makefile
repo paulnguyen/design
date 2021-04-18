@@ -10,6 +10,7 @@ aspects:
 	ajc -1.5 *.java *.aj
 
 run:
-	java TheEconomy
+	java Main
+
 
 

@@ -1300,3 +1300,699 @@ Stack Trace
 	at java.base@11.0.10/java.util.concurrent.locks.LockSupport.park(LockSupport.java:194)
 	at java.base@11.0.10/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1628)
 	at java.base@11.0.10/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+!SESSION 2021-04-18 00:55:15.483 -----------------------------------------------
+eclipse.buildId=4.17.0.I20200902-1800
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.committers.product -keyring /Users/pnguyen/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.committers.product -keyring /Users/pnguyen/.eclipse_keyring
+
+!ENTRY org.eclipse.jface 2 0 2021-04-18 00:55:25.904
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-04-18 00:55:25.904
+!MESSAGE A conflict occurred for COMMAND+SHIFT+T:
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1977b0df,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4a490518,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:05:49.786
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:346)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:193)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.initialReconcile(JavaReconcilingStrategy.java:188)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.initialReconcile(CompositeReconcilingStrategy.java:125)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.initialReconcile(JavaCompositeReconcilingStrategy.java:139)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.initialProcess(MonoReconciler.java:98)
+	at org.eclipse.jdt.internal.ui.text.JavaReconciler.initialProcess(JavaReconciler.java:419)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:177)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:05:49.787
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:05:49.787
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@360de2b3
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:49.787
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:49.787
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@1106704310
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:49.787
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:49.787
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@1718829817
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:49.787
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@225304812
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:05:56.877
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:192)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1141)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:05:56.877
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:05:56.877
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@2c1d9563
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:56.877
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:56.877
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@1632434653
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:56.877
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:56.877
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@1019279733
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:56.877
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@1353850088
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:05:57.897
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:192)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1141)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:05:57.897
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:05:57.897
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@13f15452
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:57.897
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:57.897
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@1010511194
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:57.897
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:57.897
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@140001036
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:57.897
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@199777728
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:05:58.910
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:192)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1141)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:05:58.910
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:05:58.910
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@6510f163
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:58.910
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:58.910
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@1523064432
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:58.910
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:58.910
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@1931379820
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:05:58.910
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@624031798
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:06:48.608
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:346)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:193)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1277)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:06:48.608
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:06:48.608
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@159d3ec7
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:48.608
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:48.608
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@350333137
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:48.608
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:48.608
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@101059921
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:48.608
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@513573509
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:06:48.615
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:346)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:193)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:103)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1277)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:06:48.615
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:06:48.616
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@2d12cb6b
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:48.616
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:48.616
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@1350798247
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:48.616
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:48.616
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@1198127125
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:48.616
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@795707524
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:06:52.137
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:346)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:193)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1277)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:06:52.137
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:06:52.137
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@16f17d52
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:52.137
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:52.137
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@153298840
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:52.137
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:52.137
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@123059322
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:52.137
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@376842414
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:06:52.143
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:346)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:193)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:103)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1277)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:06:52.143
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:06:52.143
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@1ae32392
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:52.143
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:52.143
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@487016048
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:52.143
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:52.143
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@1852590679
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:52.143
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@1778057663
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:06:54.161
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:346)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:193)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1277)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:06:54.161
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:06:54.161
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@39621314
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:54.161
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:54.161
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@282218358
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:54.161
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:54.161
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@1134312925
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:54.161
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@735968044
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:06:54.167
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:346)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:193)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:103)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1277)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:06:54.167
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:06:54.167
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@5bae6ff
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:54.167
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:54.167
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@1754308017
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:54.167
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:54.167
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@173759567
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:06:54.167
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@1243301969
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:07:02.206
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:346)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:193)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1277)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:07:02.206
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:07:02.206
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@6ee4b85f
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:02.206
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:02.206
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@813626625
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:02.206
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:02.206
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@2102549352
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:02.206
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@1579951584
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:07:02.212
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:346)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:193)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:103)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1277)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:07:02.212
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:07:02.212
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@adc1d79
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:02.212
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:02.212
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@673302143
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:02.212
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:02.212
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@1100356501
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:02.212
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@641846190
+
+!ENTRY org.eclipse.ajdt.core 4 0 2021-04-18 01:07:17.286
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:236)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.createTypeBinding(ITDInserter.java:516)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:581)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.addSuperInterfaces(ITDInserter.java:526)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:187)
+	at org.eclipse.ajdt.core.parserbridge.ITDInserter.visit(ITDInserter.java:132)
+	at org.eclipse.jdt.internal.compiler.ast.TypeDeclaration.traverse(TypeDeclaration.java:1635)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:822)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.traverse(CompilationUnitDeclaration.java:783)
+	at org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment.completeTypeBindings(ITDAwareLookupEnvironment.java:42)
+	at org.eclipse.jdt.internal.compiler.Compiler.resolve(Compiler.java:1060)
+	at org.eclipse.ajdt.core.parserbridge.AJCompilationUnitProblemFinder.processAJ(AJCompilationUnitProblemFinder.java:236)
+	at org.eclipse.ajdt.ui.AJDTNameEnvironmentProvider.problemFind(AJDTNameEnvironmentProvider.java:79)
+	at org.eclipse.contribution.jdt.itdawareness.ITDAwarenessAspect.ajc$around$org_eclipse_contribution_jdt_itdawareness_ITDAwarenessAspect$4$8b05d765(ITDAwarenessAspect.aj:234)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:247)
+	at org.eclipse.jdt.internal.core.CompilationUnitProblemFinder.process(CompilationUnitProblemFinder.java:346)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:193)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1318)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SUBENTRY 1 org.eclipse.ajdt.core 4 0 2021-04-18 01:07:17.286
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter.augmentType(ITDInserter.java:256)
+!SUBENTRY 1 org.eclipse.ajdt.core 1 1 2021-04-18 01:07:17.286
+!MESSAGE org.eclipse.ajdt.core.parserbridge.ITDInserter@32268a8e
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:17.286
+!MESSAGE unit=class org.eclipse.jdt.internal.core.CompilationUnit@912970244
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:17.286
+!MESSAGE env=class org.eclipse.ajdt.core.codeconversion.ITDAwareLookupEnvironment@1408613685
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:17.286
+!MESSAGE origMap=class java.util.HashMap@0
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:17.286
+!MESSAGE typeConverter=class org.eclipse.ajdt.core.parserbridge.ITDInserter$ITDTypeConverter@805096648
+!SUBENTRY 2 org.eclipse.ajdt.core 1 0 2021-04-18 01:07:17.286
+!MESSAGE model=class org.eclipse.ajdt.core.model.AJProjectModelFacade@1634383555
