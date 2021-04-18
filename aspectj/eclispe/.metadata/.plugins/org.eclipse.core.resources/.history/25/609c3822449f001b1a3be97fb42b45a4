@@ -1,8 +1,0 @@
-
-public class Log {
-	
-	Public void store( String msg ) {
-		System.out.println( "Audit: " + msg ) ;
-	}
-
-}
