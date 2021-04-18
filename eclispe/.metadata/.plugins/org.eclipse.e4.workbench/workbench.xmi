@@ -76,7 +76,7 @@
           <tags>persp.newWizSC:ajaspectwizard</tags>
           <tags>persp.newWizSC:ajprojectwizard</tags>
           <tags>persp.perspSC:org.eclipse.ajdt.ui.visualiser.AspectVisualizationPerspective</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_Jsq0UaAYEeuoMrSjyMfP4Q" selectedElement="_Jsq0WqAYEeuoMrSjyMfP4Q" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_Jsq0UaAYEeuoMrSjyMfP4Q" selectedElement="_Jsq0UqAYEeuoMrSjyMfP4Q" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_Jsq0UqAYEeuoMrSjyMfP4Q" containerData="2287" selectedElement="_Jsq0U6AYEeuoMrSjyMfP4Q">
               <children xsi:type="basic:PartStack" xmi:id="_Jsq0U6AYEeuoMrSjyMfP4Q" elementId="left" containerData="6000" selectedElement="_Jsq0VKAYEeuoMrSjyMfP4Q">
                 <tags>org.eclipse.e4.primaryNavigationStack</tags>
@@ -105,7 +105,7 @@
                 </children>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_Jsq0WqAYEeuoMrSjyMfP4Q" containerData="7713" selectedElement="_Jsq0aKAYEeuoMrSjyMfP4Q">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_Jsq0WqAYEeuoMrSjyMfP4Q" containerData="7713" selectedElement="_Jsq0W6AYEeuoMrSjyMfP4Q">
               <children xsi:type="basic:PartSashContainer" xmi:id="_Jsq0W6AYEeuoMrSjyMfP4Q" containerData="6696" selectedElement="_Jsq0XKAYEeuoMrSjyMfP4Q" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_Jsq0XKAYEeuoMrSjyMfP4Q" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_JsZukKAYEeuoMrSjyMfP4Q"/>
                 <children xsi:type="basic:PartSashContainer" xmi:id="_Jsq0XaAYEeuoMrSjyMfP4Q" visible="false" containerData="2500" selectedElement="_Jsq0YKAYEeuoMrSjyMfP4Q">
@@ -238,7 +238,7 @@
           <tags>org.eclipse.ajdt.internal.ui.editor.CompilationUnitEditor</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="__3LuMKAdEeuGpekfab9u5g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Main.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Main.java&quot; partName=&quot;Main.java&quot; title=&quot;Main.java&quot; tooltip=&quot;AspectJ Starbucks/src/Main.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/AspectJ Starbucks/src/Main.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Main.java&quot; partName=&quot;Main.java&quot; title=&quot;Main.java&quot; tooltip=&quot;AspectJ Starbucks/src/Main.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/AspectJ Starbucks/src/Main.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;305&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
@@ -398,7 +398,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Jm15IKAYEeuoMrSjyMfP4Q" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_b9MeAKAbEeuGpekfab9u5g" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_JYOOr6AYEeuoMrSjyMfP4Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_g6jMAKAfEeu1ko8qPFlRNA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_JYOOr6AYEeuoMrSjyMfP4Q"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Jm15IaAYEeuoMrSjyMfP4Q" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -429,7 +429,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Jm15KKAYEeuoMrSjyMfP4Q" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_b9OTMKAbEeuGpekfab9u5g" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_JYOOVaAYEeuoMrSjyMfP4Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_g6lBMKAfEeu1ko8qPFlRNA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_JYOOVaAYEeuoMrSjyMfP4Q"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Jm15KaAYEeuoMrSjyMfP4Q" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1263,7 +1263,7 @@
     <bindings xmi:id="_JYpsOKAYEeuoMrSjyMfP4Q" keySequence="ALT+CR" command="_JYMZM6AYEeuoMrSjyMfP4Q"/>
   </bindingTables>
   <bindingTables xmi:id="_JZHmMaAYEeuoMrSjyMfP4Q" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_JXxibqAYEeuoMrSjyMfP4Q">
-    <bindings xmi:id="_breb4KAbEeuGpekfab9u5g" keySequence="M1+W" command="_JZG_JqAYEeuoMrSjyMfP4Q"/>
+    <bindings xmi:id="_gspS4KAfEeu1ko8qPFlRNA" keySequence="M1+W" command="_JZG_JqAYEeuoMrSjyMfP4Q"/>
   </bindingTables>
   <bindingTables xmi:id="_Jsa8saAYEeuoMrSjyMfP4Q" bindingContext="_Jsa8sKAYEeuoMrSjyMfP4Q"/>
   <bindingTables xmi:id="_JsbjwaAYEeuoMrSjyMfP4Q" bindingContext="_JsbjwKAYEeuoMrSjyMfP4Q"/>
