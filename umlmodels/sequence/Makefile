@@ -10,3 +10,6 @@ blackbox:
 example:
 	java -Dzanthan.prefs=diagram.preferences -jar sequence-10.0.jar --headless example.seq
 
+trace:
+	java -Dzanthan.prefs=diagram.preferences -jar sequence-10.0.jar --headless trace.seq
+
